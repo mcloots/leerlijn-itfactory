@@ -18,4 +18,9 @@ export interface Course {
     phaseNumber: number;
     semesters: Semester[];
   }
+
+  export interface Connection {
+    z_code_1: string;
+    z_code_2: string;
+  }
   
