@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, HostListener, inject, OnInit } from '@angular/core';
 import { Connection, Course } from '../course';
 import { CourseService } from '../course.service';
 import * as d3 from 'd3';
@@ -18,6 +18,23 @@ export class CourseFlowchartComponent implements OnInit {
       this.fetchCourses(result);
     });
 
+  }
+
+  // HostListener to listen for the 'R' key press
+  @HostListener('document:keydown', ['$event'])
+  onKeydown(event: KeyboardEvent) {
+    if (event.key === 'r' || event.key === 'R') { // 'r' or 'R' key is pressed
+      this.resetFlowchart();
+    }
+  }
+
+  // Function to reset flowchart (recreate it back to initial state)
+  resetFlowchart() {
+    // Clear the existing flowchart (remove previous SVG)
+    d3.select('#flowchart-container').selectAll('*').remove();
+
+    // Recreate the flowchart by calling your existing function
+    this.ngOnInit();
   }
 
   fetchCourses(connections: Connection[]): void {
@@ -99,6 +116,10 @@ export class CourseFlowchartComponent implements OnInit {
         .attr('transform', `translate(${xPosition + 10}, ${yPosition})`)
         .classed(`column-${xPos}`, true);
 
+      // Apply opacity if phase_is_mandatory is 0
+      const opacity = course.phase_is_mandatory ? 1 : 0.3; // If not mandatory, set opacity to 0.3
+
+
       // Rectangle for each course
       courseGroup.append('rect')
         .attr('width', courseWidth) // Span 2 columns for Semester 3
@@ -107,6 +128,7 @@ export class CourseFlowchartComponent implements OnInit {
         .attr('stroke', 'black')
         .attr('id', `course-${course.z_code}`)
         .style('cursor', 'pointer') // Cursor pointer
+        .style('opacity', opacity)  // Apply opacity
         .on('click', () => this.highlightConnectedCourses(course.z_code, connections));
 
       // Text (with wrap)
