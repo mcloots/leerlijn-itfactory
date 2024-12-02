@@ -116,6 +116,15 @@ export class CourseFlowchartComponent implements OnInit {
         .attr('text-anchor', 'middle')
         .attr('dominant-baseline', 'middle') // Vertical alignment
         .call(this.wrapText, columnWidth - 30, course.course_name);
+
+      // Info icon
+      courseGroup.append('text')
+        .attr('x', courseWidth - 30)
+        .attr('y', 20)
+        .attr('font-size', '20px')
+        .style('cursor', 'pointer')
+        .text('ℹ️')  // Info symbol
+        .on('click', () => this.showCourseModal(course));
     });
 
     // Add placeholders for missing courses (empty rectangles)
@@ -297,5 +306,34 @@ export class CourseFlowchartComponent implements OnInit {
       return { xPos: (phase - 1) * 2 + 1, span: true }; // Span across columns
     }
     return { xPos: (phase - 1) * 2 + semester, span: false }; // Regular position
+  }
+
+  showCourseModal(course: Course): void {
+    const modal = document.getElementById('course-modal')!;
+    const modalTitle = document.getElementById('modal-title')!;
+    const modalObjectives = document.getElementById('modal-objectives')!;
+
+    modalTitle.innerText = course.course_name;
+    modalObjectives.innerHTML = ''; // Clear existing objectives
+
+    course.objectives.forEach(obj => {
+      const li = document.createElement('li');
+      li.innerText = obj;
+      modalObjectives.appendChild(li);
+    });
+
+    modal.style.display = 'block';
+
+    // Close modal logic
+    const closeBtn = document.querySelector('.close') as HTMLElement;
+    closeBtn.onclick = () => {
+      modal.style.display = 'none';
+    };
+
+    window.onclick = (event: any) => {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    };
   }
 }
