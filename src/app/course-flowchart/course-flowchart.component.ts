@@ -35,7 +35,7 @@ export class CourseFlowchartComponent implements OnInit {
 
   createFlowchart(courses: Course[], connections: Connection[]): void {
     const svgWidth = 1800;
-    const svgHeight = 1200;
+    const svgHeight = 1800;
     const columnWidth = svgWidth / 6; // 6 columns
     const rowHeight = 70;
 
@@ -56,129 +56,124 @@ export class CourseFlowchartComponent implements OnInit {
     ];
 
     // Create a tracker for the number of courses in each phase and semester
-  const phaseSemesterCount: { [key: string]: number } = {};
+    const phaseSemesterCount: { [key: string]: number } = {};
 
-  // Count courses for each phase and semester
-  courses.forEach(course => {
-    const key = `${course.phase}-${course.semester}`;
-    if (!phaseSemesterCount[key]) {
-      phaseSemesterCount[key] = 0;
-    }
-    phaseSemesterCount[key]++;
-  });
+    // Count courses for each phase and semester
+    courses.forEach(course => {
+      const key = `${course.phase}-${course.semester}`;
+      if (!phaseSemesterCount[key]) {
+        phaseSemesterCount[key] = 0;
+      }
+      phaseSemesterCount[key]++;
+    });
 
-  // Create a tracker for occupied columns (row index for each column)
-  const columnTracker = Array(6).fill(0); // Array of 6 columns, all initially empty
+    // Create a tracker for occupied columns (row index for each column)
+    const columnTracker = Array(6).fill(0); // Array of 6 columns, all initially empty
 
-  // Create courses for the flowchart
-  courses.forEach(course => {
-    const { xPos, span } = this.getColumnPosition(course.phase, course.semester);
-    const xPosition = (xPos - 1) * columnWidth;
-
-    // Determine how much vertical space the course needs, depending on whether it spans one or two columns
-    let yPosition = 0;
-    const courseWidth = span ? columnWidth * 2 - 20 : columnWidth - 20;
-    const requiredColumns = span ? 2 : 1;
-
-    // Find the next available row for the given columns (check both columns if spanning)
-    let maxYPosition = 0;
-    for (let i = 0; i < requiredColumns; i++) {
-      const columnIndex = xPos - 1 + i;
-      maxYPosition = Math.max(maxYPosition, columnTracker[columnIndex]);
-    }
-
-    yPosition = maxYPosition + rowHeight;
-
-    // Update the tracker with the new yPosition for the course
-    for (let i = 0; i < requiredColumns; i++) {
-      const columnIndex = xPos - 1 + i;
-      columnTracker[columnIndex] = yPosition + rowHeight; // Update for next course in this column
-    }
-
-    const courseGroup = svg.append('g')
-      .attr('transform', `translate(${xPosition + 10}, ${yPosition})`)
-      .classed(`column-${xPos}`, true);
-
-    // Rectangle for each course
-    courseGroup.append('rect')
-      .attr('width', courseWidth) // Span 2 columns for Semester 3
-      .attr('height', 120)
-      .attr('fill', 'lightblue')
-      .attr('stroke', 'black')
-      .attr('id', `course-${course.z_code}`)
-      .style('cursor', 'pointer') // Cursor pointer
-      .on('click', () => this.highlightConnectedCourses(course.z_code, connections));
-
-    // Text (with wrap)
-    courseGroup.append('text')
-      .attr('x', courseWidth / 2) // Center horizontally
-      .attr('y', 120 / 2) // Center vertically
-      .attr('text-anchor', 'middle')
-      .attr('dominant-baseline', 'middle') // Vertical alignment
-      .call(this.wrapText, columnWidth - 30, course.course_name);
-  });
-
-  // Add placeholders for missing courses (empty rectangles)
-  columnMapping.forEach(mapping => {
-    const phaseSemesterKey = `${mapping.phase}-${mapping.semester}`;
-    const courseCount = phaseSemesterCount[phaseSemesterKey] || 0;
-
-    if (courseCount === 0) {
-      const xPos = (mapping.phase - 1) * 2 + mapping.semester;
+    // Create courses for the flowchart
+    courses.forEach(course => {
+      const { xPos, span } = this.getColumnPosition(course.phase, course.semester);
       const xPosition = (xPos - 1) * columnWidth;
-      const yPosition = (svg.selectAll(`.column-${xPos}`).size() + 1) * rowHeight;
 
-      // Create a placeholder rectangle for missing course
-      svg.append('rect')
-        .attr('x', xPosition + 10)
-        .attr('y', yPosition)
-        .attr('width', columnWidth - 20)
-        .attr('height', 60)
-        .attr('fill', 'lightgray') // Placeholder color
+      // Determine how much vertical space the course needs, depending on whether it spans one or two columns
+      let yPosition = 0;
+      const courseWidth = span ? columnWidth * 2 - 20 : columnWidth - 20;
+      const requiredColumns = span ? 2 : 1;
+
+      // Find the next available row for the given columns (check both columns if spanning)
+      let maxYPosition = 0;
+      for (let i = 0; i < requiredColumns; i++) {
+        const columnIndex = xPos - 1 + i;
+        maxYPosition = Math.max(maxYPosition, columnTracker[columnIndex]);
+      }
+
+      yPosition = maxYPosition + rowHeight;
+
+      // Update the tracker with the new yPosition for the course
+      for (let i = 0; i < requiredColumns; i++) {
+        const columnIndex = xPos - 1 + i;
+        columnTracker[columnIndex] = yPosition + rowHeight; // Update for next course in this column
+      }
+
+      const courseGroup = svg.append('g')
+        .attr('transform', `translate(${xPosition + 10}, ${yPosition})`)
+        .classed(`column-${xPos}`, true);
+
+      // Rectangle for each course
+      courseGroup.append('rect')
+        .attr('width', courseWidth) // Span 2 columns for Semester 3
+        .attr('height', 120)
+        .attr('fill', 'lightblue')
         .attr('stroke', 'black')
-        .attr('class', `empty-column-${xPos}`);
-    }
-  });
+        .attr('id', `course-${course.z_code}`)
+        .style('cursor', 'pointer') // Cursor pointer
+        .on('click', () => this.highlightConnectedCourses(course.z_code, connections));
 
-  // Column Labels (Phase and Semester)
-  svg.selectAll('.column-label')
-    .data(columnMapping)
-    .enter()
-    .append('text')
-    .attr('x', (_, i) => i * columnWidth + columnWidth / 2)
-    .attr('y', 30)
-    .attr('text-anchor', 'middle')
-    .text(d => `Phase ${d.phase}, Semester ${d.semester}`)
-    .attr('font-weight', 'bold');
+      // Text (with wrap)
+      courseGroup.append('text')
+        .attr('x', courseWidth / 2) // Center horizontally
+        .attr('y', 120 / 2) // Center vertically
+        .attr('text-anchor', 'middle')
+        .attr('dominant-baseline', 'middle') // Vertical alignment
+        .call(this.wrapText, columnWidth - 30, course.course_name);
+    });
+
+    // Add placeholders for missing courses (empty rectangles)
+    columnMapping.forEach(mapping => {
+      const phaseSemesterKey = `${mapping.phase}-${mapping.semester}`;
+      const courseCount = phaseSemesterCount[phaseSemesterKey] || 0;
+
+      if (courseCount === 0) {
+        const xPos = (mapping.phase - 1) * 2 + mapping.semester;
+        const xPosition = (xPos - 1) * columnWidth;
+        const yPosition = (svg.selectAll(`.column-${xPos}`).size() + 1) * rowHeight;
+
+        // Create a placeholder rectangle for missing course
+        svg.append('rect')
+          .attr('x', xPosition + 10)
+          .attr('y', yPosition)
+          .attr('width', columnWidth - 20)
+          .attr('height', 60)
+          .attr('fill', 'lightgray') // Placeholder color
+          .attr('stroke', 'black')
+          .attr('class', `empty-column-${xPos}`);
+      }
+    });
+
+    // Column Labels (Phase and Semester)
+    svg.selectAll('.column-label')
+      .data(columnMapping)
+      .enter()
+      .append('text')
+      .attr('x', (_, i) => i * columnWidth + columnWidth / 2)
+      .attr('y', 30)
+      .attr('text-anchor', 'middle')
+      .text(d => `Phase ${d.phase}, Semester ${d.semester}`)
+      .attr('font-weight', 'bold');
   }
 
   highlightConnectedCourses(courseZCode: string, connections: Connection[]): void {
     const svg = d3.select('svg');
-
-    // Clear previous highlights
-    svg.selectAll('rect')
-      .transition()
-      .duration(300)
+    // Reset all courses to default state
+    svg.selectAll('g')
+      .attr('fill-opacity', 1)
+      .attr('filter', 'none')
+      .select('rect')
       .attr('fill', 'lightblue')
       .attr('stroke-width', 1);
 
-    // Set to keep track of all the connected courses (to avoid duplicates)
+    // Set to track connected courses
     const allConnectedZCodes = new Set<string>();
 
-    // Recursive function to find all connected courses (any depth)
+    // Recursive function to find all connected courses
     const findConnectedCourses = (zCode: string) => {
-      // Add the current course to the set
       allConnectedZCodes.add(zCode);
 
-      // Find courses directly connected to the current course
       const directConnections = connections.filter(conn =>
         conn.z_code_1 === zCode || conn.z_code_2 === zCode);
 
-      // Loop through each direct connection and add its connected course
       directConnections.forEach(conn => {
         const connectedCourse = conn.z_code_1 === zCode ? conn.z_code_2 : conn.z_code_1;
-
-        // If the connected course hasn't been added yet, recursively find its connections
         if (!allConnectedZCodes.has(connectedCourse)) {
           findConnectedCourses(connectedCourse);
         }
@@ -188,14 +183,22 @@ export class CourseFlowchartComponent implements OnInit {
     // Start the recursive search from the clicked course
     findConnectedCourses(courseZCode);
 
-    // Highlight all connected courses
+    // Highlight connected courses
     allConnectedZCodes.forEach(zCode => {
       svg.select(`#course-${zCode}`)
-        .transition()
-        .duration(300)
-        .attr('fill', 'orange')  // Use any color you like
+        .attr('fill', 'orange')
         .attr('stroke-width', 3);
     });
+
+    // Blur non-connected courses
+    svg.selectAll('g')
+      .filter(function () {
+        const rect = d3.select(this).select('rect');
+        const id = rect.attr('id')?.replace('course-', '');
+        return !allConnectedZCodes.has(id!);
+      })
+      .attr('fill-opacity', 0.5)
+      .attr('filter', 'blur(2px)');
   }
 
   // Function to wrap text into multiple lines
