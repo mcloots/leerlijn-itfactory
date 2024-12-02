@@ -198,7 +198,7 @@ export class CourseFlowchartComponent implements OnInit {
         return !allConnectedZCodes.has(id!);
       })
       .attr('fill-opacity', 0.5)
-      .attr('filter', 'blur(2px)');
+      .attr('filter', 'blur(1px)');
   }
 
   // Function to wrap text into multiple lines
