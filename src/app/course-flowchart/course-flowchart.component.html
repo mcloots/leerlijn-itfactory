@@ -1,10 +1,90 @@
-<div id="flowchart-container" style="width: 100%; height: 600px;"></div>
+@if(courses) {
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 p-2">
+  <!-- Phase 1 (Year 1) -->
+  <div>
+    <h1 class="font-bold text-xl text-center mb-4">Year 1 (Phase 1)</h1>
+    <div class="grid grid-cols-2 gap-4">
+      <!-- Semester 1 -->
+      <div class="col-span-1">
+        <h2 class="font-bold text-lg text-center">Semester 1</h2>
+        @for (course of getCourses(1, 1); track $index) {
+        <app-course [course]="course"></app-course>
+        }
+      </div>
 
-<!-- Modal Template -->
-<div id="course-modal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2 id="modal-title"></h2>
-      <ul id="modal-objectives"></ul>
+      <!-- Semester 2 -->
+      <div class="col-span-1">
+        <h2 class="font-bold text-lg text-center">Semester 2</h2>
+        @for (course of getCourses(1, 2); track $index) {
+        <app-course [course]="course"></app-course>
+        }
+      </div>
+
+      <!-- Semester 3 -->
+      <div class="col-span-2">
+        @for (course of getCourses(1, 3); track $index) {
+        <app-course [course]="course"></app-course>
+        }
+      </div>
     </div>
   </div>
+
+  <!-- Phase 2 (Year 2) -->
+  <div>
+    <h1 class="font-bold text-xl text-center mb-4">Year 2 (Phase 2)</h1>
+    <div class="grid grid-cols-2 gap-4">
+      <!-- Semester 1 -->
+      <div class="col-span-1">
+        <h2 class="font-bold text-lg text-center">Semester 1</h2>
+        @for (course of getCourses(2, 1); track $index) {
+        <app-course [course]="course"></app-course>
+        }
+      </div>
+
+      <!-- Semester 2 -->
+      <div class="col-span-1">
+        <h2 class="font-bold text-lg text-center">Semester 2</h2>
+        @for (course of getCourses(2, 2); track $index) {
+        <app-course [course]="course"></app-course>
+        }
+      </div>
+
+      <!-- Semester 3 -->
+      <div class="col-span-2">
+        @for (course of getCourses(2, 3); track $index) {
+        <app-course [course]="course"></app-course>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 3 (Year 3) -->
+  <div>
+    <h1 class="font-bold text-xl text-center mb-4">Year 3 (Phase 3)</h1>
+    <div class="grid grid-cols-2 gap-4">
+      <!-- Semester 1 -->
+      <div class="col-span-1">
+        <h2 class="font-bold text-lg text-center">Semester 1</h2>
+        @for (course of getCourses(3, 1); track $index) {
+        <app-course [course]="course"></app-course>
+        }
+      </div>
+
+      <!-- Semester 2 -->
+      <div class="col-span-1">
+        <h2 class="font-bold text-lg text-center">Semester 2</h2>
+        @for (course of getCourses(3, 2); track $index) {
+        <app-course [course]="course"></app-course>
+        }
+      </div>
+
+      <!-- Semester 3 -->
+      <div class="col-span-2">
+        @for (course of getCourses(3, 3); track $index) {
+        <app-course [course]="course"></app-course>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+}
