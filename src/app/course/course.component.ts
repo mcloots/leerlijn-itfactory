@@ -20,8 +20,11 @@ export class CourseComponent {
   readonly dialog = inject(MatDialog);
 
   currentNgClass = computed(() => {
-    if (this.isHighlighted()) { return 'bg-orange-100' };
+    if (this.isHighlighted()) { return 'bg-orange-200' };
 
+    if (!this.course().phase_is_mandatory) {
+      return 'bg-yellow-100'
+    }
     return 'bg-blue-100';
   },
   );
