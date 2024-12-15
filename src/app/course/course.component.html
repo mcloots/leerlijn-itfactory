@@ -1,3 +1,7 @@
-<div class="bg-blue-100 p-2 mb-2 border rounded">
-    {{ course.course_name }}
+<div (click)="onCourseClick()" class="relative p-6 mb-2 border rounded text-center cursor-pointer"
+  [ngClass]="currentNgClass()" [ngStyle]="currentNgStyle()">
+  {{ course().course_name }}
+  <button mat-icon-button (click)="openDetails($event, course())" class="absolute top-2 right-2">
+    <mat-icon class="detail-icon">info</mat-icon>
+  </button>
 </div>

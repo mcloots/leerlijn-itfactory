@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Connection, Course } from './course';
+import { Course, Tag } from './course';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class CourseService {
     return this.http.get<Course[]>(`${this.apiUrl}/courses`);
   }
 
-  getConnections(): Observable<Connection[]> {
-    return this.http.get<Connection[]>(`${this.apiUrl}/connections`);
+  getTags(): Observable<Tag[]> {
+    return this.http.get<Tag[]>(`${this.apiUrl}/tags`);
   }
 }

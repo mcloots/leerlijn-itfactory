@@ -1,0 +1,14 @@
+<div class="sticky-footer bg-gray-100 border-t border-gray-300 p-4 flex justify-center">
+    <div class="flex space-x-4 items-center">
+        @for (tag of tags; track $index) {
+        <div class="flex items-center space-x-2 cursor-pointer" (click)="onTagClick(tag)">
+            <p class="w-7 h-7 rounded-full focus:ring-2 focus:ring-offset-2"
+                [ngStyle]="{ 'background-color': tag.hex_color}"></p>
+            <p class="text-center cursor-pointer"
+                [ngClass]="{'underline underline-offset-4 decoration-4': selectedTag === tag.name}"
+                [ngStyle]="selectedTag === tag.name ? { 'text-decoration-color': tag.hex_color } : {}">{{tag.name}}
+            </p>
+        </div>
+        }
+    </div>
+</div>

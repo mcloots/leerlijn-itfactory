@@ -6,24 +6,30 @@
     <div class="grid grid-cols-2 gap-4">
       <!-- Semester 1 -->
       <div class="col-span-1">
-        <h2 class="font-bold text-lg text-center">Semester 1</h2>
+        <h2 class="font-bold text-lg text-center mb-2">Semester 1</h2>
         @for (course of getCourses(1, 1); track $index) {
-        <app-course [course]="course"></app-course>
+        <app-course [course]="course" [isHighlighted]="isCourseHighlighted(course.learning_track_id)"
+          [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
+          (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
         }
       </div>
 
       <!-- Semester 2 -->
       <div class="col-span-1">
-        <h2 class="font-bold text-lg text-center">Semester 2</h2>
+        <h2 class="font-bold text-lg text-center mb-2">Semester 2</h2>
         @for (course of getCourses(1, 2); track $index) {
-        <app-course [course]="course"></app-course>
+        <app-course [course]="course" [isHighlighted]="isCourseHighlighted(course.learning_track_id)"
+          [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
+          (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
         }
       </div>
 
       <!-- Semester 3 -->
       <div class="col-span-2">
         @for (course of getCourses(1, 3); track $index) {
-        <app-course [course]="course"></app-course>
+        <app-course [course]="course" [isHighlighted]="isCourseHighlighted(course.learning_track_id)"
+          [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
+          (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
         }
       </div>
     </div>
@@ -35,24 +41,30 @@
     <div class="grid grid-cols-2 gap-4">
       <!-- Semester 1 -->
       <div class="col-span-1">
-        <h2 class="font-bold text-lg text-center">Semester 1</h2>
+        <h2 class="font-bold text-lg text-center mb-2">Semester 1</h2>
         @for (course of getCourses(2, 1); track $index) {
-        <app-course [course]="course"></app-course>
+        <app-course [course]="course" [isHighlighted]="isCourseHighlighted(course.learning_track_id)"
+          [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
+          (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
         }
       </div>
 
       <!-- Semester 2 -->
       <div class="col-span-1">
-        <h2 class="font-bold text-lg text-center">Semester 2</h2>
+        <h2 class="font-bold text-lg text-center mb-2">Semester 2</h2>
         @for (course of getCourses(2, 2); track $index) {
-        <app-course [course]="course"></app-course>
+        <app-course [course]="course" [isHighlighted]="isCourseHighlighted(course.learning_track_id)"
+          [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
+          (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
         }
       </div>
 
       <!-- Semester 3 -->
       <div class="col-span-2">
         @for (course of getCourses(2, 3); track $index) {
-        <app-course [course]="course"></app-course>
+        <app-course [course]="course" [isHighlighted]="isCourseHighlighted(course.learning_track_id)"
+          [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
+          (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
         }
       </div>
     </div>
@@ -64,27 +76,35 @@
     <div class="grid grid-cols-2 gap-4">
       <!-- Semester 1 -->
       <div class="col-span-1">
-        <h2 class="font-bold text-lg text-center">Semester 1</h2>
+        <h2 class="font-bold text-lg text-center mb-2">Semester 1</h2>
         @for (course of getCourses(3, 1); track $index) {
-        <app-course [course]="course"></app-course>
+        <app-course [course]="course" [isHighlighted]="isCourseHighlighted(course.learning_track_id)"
+          [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
+          (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
         }
       </div>
 
       <!-- Semester 2 -->
       <div class="col-span-1">
-        <h2 class="font-bold text-lg text-center">Semester 2</h2>
+        <h2 class="font-bold text-lg text-center mb-2">Semester 2</h2>
         @for (course of getCourses(3, 2); track $index) {
-        <app-course [course]="course"></app-course>
+        <app-course [course]="course" [isHighlighted]="isCourseHighlighted(course.learning_track_id)"
+          [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
+          (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
         }
       </div>
 
       <!-- Semester 3 -->
       <div class="col-span-2">
         @for (course of getCourses(3, 3); track $index) {
-        <app-course [course]="course"></app-course>
+        <app-course [course]="course" [isHighlighted]="isCourseHighlighted(course.learning_track_id)"
+          [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
+          (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
         }
       </div>
     </div>
   </div>
 </div>
+
+<app-footer (tagClick)="onTagClicked($event)"></app-footer>
 }

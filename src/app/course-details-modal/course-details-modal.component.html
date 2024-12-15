@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Course Details</h1>
+<div mat-dialog-content>
+    <p><strong>Name:</strong> {{ course.course_name }}</p>
+    <p><strong>Learning objectives:</strong></p>
+    <ul>
+        @for (obj of course.objectives; track $index) {
+        <li>{{obj}}</li>
+        }
+    </ul>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onClose()">Close</button>
+</div>

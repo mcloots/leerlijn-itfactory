@@ -8,6 +8,7 @@ export interface Course {
   learning_contents: string;
   learning_track_id: number;
   objectives: string[];
+  tags: string[]
 }
 
 export interface Semester {
@@ -20,8 +21,8 @@ export interface Phase {
   semesters: Semester[];
 }
 
-export interface Connection {
-  z_code_1: string;
-  z_code_2: string;
+export interface Tag {
+  name: string;
+  hex_color: string;
 }
 
