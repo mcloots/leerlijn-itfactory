@@ -1,6 +1,17 @@
 <div (click)="onCourseClick()" class="relative p-6 mb-2 border rounded text-center cursor-pointer"
   [ngClass]="currentNgClass()" [ngStyle]="currentNgStyle()">
   {{ course().course_name }}
+
+  <div class="absolute top-2 left-2 flex flex-col space-y-1">
+    @if(course().language.toLowerCase().includes('nl')) {
+    <img src="be.png" class="w-5 h-auto" alt="Belgian Flag">
+    }
+
+    @if(course().language.toLowerCase().includes('en')) {
+    <img src="en.png" class="w-5 h-auto" alt="English Flag">
+    }
+  </div>
+
   <button mat-icon-button (click)="openDetails($event, course())" class="absolute top-2 right-2">
     <mat-icon class="detail-icon">info</mat-icon>
   </button>
