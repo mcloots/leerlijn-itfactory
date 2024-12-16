@@ -4,6 +4,7 @@ import { CourseService } from '../course.service';
 import { CourseComponent } from '../course/course.component';
 import { FooterComponent } from "../footer/footer.component";
 import { filter, map } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-course-flowchart',
@@ -16,14 +17,27 @@ export class CourseFlowchartComponent implements OnInit {
   private courseService = inject(CourseService);
   selectedLearningTrackId = 0;
   selectedTag = signal<Tag | null>(null);
+  @Input() learning_track_id: number = 0;
+  @Input() isReused: boolean = false;
+  @Input() programmeSelected: string = '';
+  @Input() selectedCourse: string = '';
+  private route = inject(ActivatedRoute);
 
-  @Input()
-  set programme(programme: string) {
-    this.fetchCourses(programme);
-  }
+  // @Input()
+  // set programme(programme: string) {
+  //   if (!this.isReused) {
+  //     this.fetchCourses(programme, null);
+  //   }
+  // }
 
   ngOnInit(): void {
+    const programme = this.route.snapshot.paramMap.get('programme');
 
+    if (this.isReused) {
+      this.fetchCourses(this.programmeSelected, this.learning_track_id);
+    } else if (programme) {
+      this.fetchCourses(programme, null);
+    }
   }
 
   // HostListener to listen for the 'R' key press
@@ -39,16 +53,30 @@ export class CourseFlowchartComponent implements OnInit {
     this.ngOnInit();
   }
 
-  fetchCourses(programme: string): void {
-    this.courseService.getCourses()
-      .pipe(
-        map(courses => courses.filter(course =>
-          course.programme.toUpperCase().includes('ALL') || course.programme.toUpperCase().includes(programme.toUpperCase())
-        ))
-      )
-      .subscribe(courses => {
-        this.courses = courses;
-      });
+  fetchCourses(programme: string, learning_track_id: number | null): void {
+    if (!learning_track_id) {
+      this.courseService.getCourses()
+        .pipe(
+          map(courses => courses.filter(course =>
+            course.programme.toUpperCase().includes('ALL') || course.programme.toUpperCase().includes(programme.toUpperCase())
+          ))
+        )
+        .subscribe(courses => {
+          console.log(this.courses);
+          this.courses = courses;
+        });
+    } else {
+      this.courseService.getCourses()
+        .pipe(
+          map(courses => courses.filter(course =>
+            course.learning_track_id === learning_track_id
+          ))
+        )
+        .subscribe(courses => {
+          console.log(this.courses);
+          this.courses = courses;
+        });
+    }
   }
 
   getCourses(phase: number, semester: number): Course[] {
@@ -63,7 +91,11 @@ export class CourseFlowchartComponent implements OnInit {
         : learningTrackId;
   }
 
-  isCourseHighlighted(learningTrackId: number): boolean {
+  isCourseHighlighted(learningTrackId: number, z_code: string): boolean {
+    if (this.selectedCourse) {
+      return (this.selectedCourse === z_code);
+    }
+
     return (
       this.selectedLearningTrackId > 0 &&
       this.selectedLearningTrackId === learningTrackId

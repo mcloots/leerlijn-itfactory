@@ -1,10 +1,13 @@
-import { Component, Inject } from '@angular/core';
+import { Component, forwardRef, Inject } from '@angular/core';
 import { Course } from '../course';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { SemesterPipe } from "../semester.pipe";
+import { CourseFlowchartComponent } from "../course-flowchart/course-flowchart.component";
 
 @Component({
   selector: 'app-course-details-modal',
-  imports: [],
+  imports: [MatIconModule, SemesterPipe, forwardRef(() => CourseFlowchartComponent)],
   templateUrl: './course-details-modal.component.html',
   styleUrl: './course-details-modal.component.css'
 })

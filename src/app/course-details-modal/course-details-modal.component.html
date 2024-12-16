@@ -1,13 +1,22 @@
-<h1 mat-dialog-title>Course Details</h1>
-<div mat-dialog-content>
-    <p><strong>Name:</strong> {{ course.course_name }}</p>
-    <p><strong>Learning objectives:</strong></p>
-    <ul>
-        @for (obj of course.objectives; track $index) {
-        <li>{{obj}}</li>
-        }
-    </ul>
-</div>
-<div mat-dialog-actions>
-    <button mat-button (click)="onClose()">Close</button>
+<div class="relative">
+    <!-- Close Icon -->
+    <button (click)="onClose()" mat-icon-button mat-dialog-close
+        class="absolute top-2 right-2 text-gray-500 hover:text-gray-700" aria-label="Close">
+        <mat-icon>close</mat-icon>
+    </button>
+
+    <!-- Modal Content -->
+    <div class="p-6">
+        <h1 class="text-2xl font-bold mb-4">{{ course.course_name }} (Phase {{course.phase}}, Semester
+            {{course.semester | semester}})</h1>
+        <p><strong>Learning objectives:</strong></p>
+        <ul class="list-disc p-4">
+            @for (obj of course.objectives; track $index) {
+            <li>{{obj}}</li>
+            }
+        </ul>
+
+        <app-course-flowchart [isReused]="true" [learning_track_id]="course.learning_track_id"
+            [programmeSelected]="course.programme" [selectedCourse]="course.z_code"></app-course-flowchart>
+    </div>
 </div>

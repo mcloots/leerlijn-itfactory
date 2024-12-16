@@ -11,8 +11,9 @@
     <img src="en.png" class="w-5 h-auto" alt="English Flag">
     }
   </div>
-
+  @if(!isReused()) {
   <button mat-icon-button (click)="openDetails($event, course())" class="absolute top-2 right-2">
     <mat-icon class="detail-icon">info</mat-icon>
   </button>
+  }
 </div>

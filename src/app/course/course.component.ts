@@ -15,6 +15,7 @@ export class CourseComponent {
   readonly course = input.required<Course>();
   readonly isHighlighted = input.required<boolean>();
   readonly isTagIncluded = input.required<boolean>();
+  readonly isReused = input.required<boolean>();
   readonly selectedTag = input.required<Tag | null>();
   @Output() courseClick: EventEmitter<number> = new EventEmitter<number>();
   readonly dialog = inject(MatDialog);
@@ -46,7 +47,10 @@ export class CourseComponent {
     event.stopPropagation();
     this.dialog.open(CourseDetailsModalComponent, {
       data: course,
-      width: '400px'
+      width: '90vw',
+      height: '90vh',
+      maxWidth: '100vw', // Prevent modal from being constrained by default maxWidth
+      maxHeight: '100vh',
     });
   }
 
