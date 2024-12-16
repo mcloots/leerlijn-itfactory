@@ -1,9 +1,9 @@
-import { Component, HostListener, inject, OnInit, signal } from '@angular/core';
+import { Component, HostListener, inject, Input, OnInit, signal } from '@angular/core';
 import { Course, Tag } from '../course';
 import { CourseService } from '../course.service';
-import * as d3 from 'd3';
 import { CourseComponent } from '../course/course.component';
 import { FooterComponent } from "../footer/footer.component";
+import { filter, map } from 'rxjs';
 
 @Component({
   selector: 'app-course-flowchart',
@@ -17,8 +17,13 @@ export class CourseFlowchartComponent implements OnInit {
   selectedLearningTrackId = 0;
   selectedTag = signal<Tag | null>(null);
 
+  @Input()
+  set programme(programme: string) {
+    this.fetchCourses(programme);
+  }
+
   ngOnInit(): void {
-    this.fetchCourses();
+
   }
 
   // HostListener to listen for the 'R' key press
@@ -34,8 +39,13 @@ export class CourseFlowchartComponent implements OnInit {
     this.ngOnInit();
   }
 
-  fetchCourses(): void {
+  fetchCourses(programme: string): void {
     this.courseService.getCourses()
+      .pipe(
+        map(courses => courses.filter(course =>
+          course.programme.toUpperCase().includes('ALL') || course.programme.toUpperCase().includes(programme.toUpperCase())
+        ))
+      )
       .subscribe(courses => {
         this.courses = courses;
       });

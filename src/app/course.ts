@@ -8,6 +8,8 @@ export interface Course {
   learning_contents: string;
   learning_track_id: number;
   objectives: string[];
+  programme: string;
+  language: string;
   tags: string[]
 }
 
