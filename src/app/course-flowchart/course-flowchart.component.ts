@@ -14,6 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CourseFlowchartComponent implements OnInit {
   courses: Course[] = [];
+  usedTags: string[] = [];
   private courseService = inject(CourseService);
   selectedLearningTrackId = 0;
   selectedTag = signal<Tag | null>(null);
@@ -64,6 +65,7 @@ export class CourseFlowchartComponent implements OnInit {
         .subscribe(courses => {
           console.log(this.courses);
           this.courses = courses;
+          this.usedTags = this.getDistinctTagsFromCourses(courses);
         });
     } else {
       this.courseService.getCourses()
@@ -75,12 +77,17 @@ export class CourseFlowchartComponent implements OnInit {
         .subscribe(courses => {
           console.log(this.courses);
           this.courses = courses;
+          this.usedTags = this.getDistinctTagsFromCourses(courses);
         });
     }
   }
 
   getCourses(phase: number, semester: number): Course[] {
     return this.courses.filter(course => course.phase === phase && course.semester === semester);
+  }
+
+  getDistinctTagsFromCourses(courses: Course[]): string[] {
+    return ([...new Set(courses.flatMap(course => course.tags))]);
   }
 
   onCourseClicked(learningTrackId: number) {

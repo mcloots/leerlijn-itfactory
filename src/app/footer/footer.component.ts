@@ -11,6 +11,7 @@ import { NgClass, NgStyle } from '@angular/common';
 })
 export class FooterComponent implements OnInit {
   readonly courseService = inject(CourseService);
+  readonly usedTags = input.required<string[]>();
   tags: Tag[] = [];
   @Output() tagClick: EventEmitter<Tag | null> = new EventEmitter<Tag | null>();
   selectedTag: string | null = null;
@@ -18,7 +19,7 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
     this.courseService.getTags()
       .subscribe(tags => {
-        this.tags = tags;
+        this.tags = tags.filter(tag => this.usedTags().includes(tag.name));
       });
   }
 

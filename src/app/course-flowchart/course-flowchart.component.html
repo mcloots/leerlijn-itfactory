@@ -114,7 +114,7 @@
     </div>
   </div>
 </div>
-@if(!isReused) {
-<app-footer (tagClick)="onTagClicked($event)"></app-footer>
+@if(!isReused && usedTags.length > 0) {
+<app-footer [usedTags]="usedTags" (tagClick)="onTagClicked($event)"></app-footer>
 }
 }
