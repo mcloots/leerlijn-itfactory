@@ -1,25 +1,99 @@
-<div class="grid grid-cols-2 grid-rows-2 min-h-screen">
-    <!-- First Column -->
-    <div class="flex items-center justify-center bg-blue-500 text-white text-xl font-bold cursor-pointer hover:bg-blue-600 transition"
-        routerLink="/app">
-        APP
+<div class="min-h-screen bg-black flex flex-col items-center justify-center text-center transition-all duration-500">
+    <!-- Back Button -->
+    <button (click)="resetToInitialState()"
+        class="absolute top-4 left-4 text-white bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-700 transition-colors"
+        aria-label="Back to start screen">
+        🔙
+    </button>
+
+    <!-- Mute/Unmute Button -->
+    <button (click)="toggleMute()"
+        class="absolute top-4 right-4 text-white bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-700 transition-colors"
+        aria-label="Mute or unmute audio">
+        @if(isMuted) {
+        <span>🔇</span>
+        } @else {
+        <span>🔊</span>
+        }
+    </button>
+
+    <!-- Audio Element -->
+    <audio #backgroundAudio [src]="'/background.mp4'" autoplay loop [muted]="isMuted"></audio>
+
+    <!-- Select Button Sound -->
+    <audio #selectAudio [src]="'/select.mp3'"></audio>
+
+    <!-- Container voor Titel en Knop -->
+    <div class="flex flex-col items-center space-y-8 transition-transform duration-500 font-orbi"
+        [ngClass]="{ 'translate-y-[-90%]': showGrid }">
+        <!-- Titel -->
+        @if(!selectedProfile) {
+        <h1 class="text-3xl md:text-5xl font-bold text-white tracking-widest">
+            {{titleText}}
+        </h1>
+        }
+
+        <!-- Startknop -->
+        @if(!showGrid) {
+        <button
+            class="bg-gradient-to-b from-orange-400 to-orange-800 text-white text-xl md:text-2xl font-bold px-8 py-4 rounded-lg shadow-[0_4px_0_#000] border-4 border-black hover:brightness-110 active:translate-y-1 active:shadow-none transition-transform duration-500"
+            (click)="onStart()">
+            Start
+        </button>
+        }
     </div>
 
-    <!-- Second Column -->
-    <div class="flex items-center justify-center bg-green-500 text-white text-xl font-bold cursor-pointer hover:bg-green-600 transition"
-        routerLink="/ai">
-        AI
-    </div>
+    <!-- Grid Layout -->
+    @if(showGrid && !selectedProfile) {
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-16 p-4 w-full max-w-6xl font-orbi">
+        <!-- Loop through profiles -->
+        @for (profile of profiles; track $index) {
+        <div class="p-6 rounded-lg shadow-lg cursor-pointer transition-all duration-500"
+            (click)="selectProfile(profile)" [ngClass]="{
+                'bg-gray-800 text-white flex flex-col items-center justify-center text-center font-bold text-lg hover:bg-orange-600': !selectedProfile || selectedProfile === profile,
+                'hidden': selectedProfile && selectedProfile !== profile
+              }">
+            @if(!selectedProfile || selectedProfile === profile) {
+            <img [src]="'/profiles/' + profile.img" alt="{{ profile.name }} image"
+                class="w-24 h-24 rounded-sm mb-4 object-cover" />
 
-    <!-- Third Column -->
-    <div class="flex items-center justify-center bg-red-500 text-white text-xl font-bold cursor-pointer hover:bg-red-600 transition"
-        routerLink="/ccs">
-        CCS
+            <div>{{ profile.name }}</div>
+            }
+        </div>
+        }
     </div>
+    }
 
-    <!-- Fourth Column -->
-    <div class="flex items-center justify-center bg-yellow-500 text-white text-xl font-bold cursor-pointer hover:bg-yellow-600 transition"
-        routerLink="/di">
-        DI
+    <!-- Selected Profile Details -->
+    @if(selectedProfile) {
+    <div
+        class="flex flex-col items-center justify-center text-center font-orbi bg-gray-900 text-white p-6 rounded-lg shadow-lg transition-all duration-500 max-w-4xl w-full space-y-6">
+        <!-- Selected Profile Image -->
+        <div class="flex-shrink-0 flex flex-col items-center mb-4">
+            <img [src]="'/profiles/' + selectedProfile.img" alt="{{ selectedProfile.name }} image"
+                class="w-32 h-32 rounded-full object-cover mb-4" />
+        </div>
+
+        <!-- Title and Description -->
+        <div>
+            <h2 class="text-2xl font-bold mb-4">{{ selectedProfile.title }}</h2>
+            <p class="text-gray-300 mb-6 text-justify" [innerHTML]="selectedProfile.description"></p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex space-x-4">
+            <!-- Go Back Button -->
+            <button (click)="resetToGridState()"
+                class="bg-gray-800 text-white px-6 py-2 rounded-lg shadow-lg hover:bg-gray-700 transition-transform duration-300">
+                🔙 Go Back
+            </button>
+
+            <!-- Navigate Button -->
+            <button [routerLink]="selectedProfile.route"
+                class="bg-gradient-to-b from-green-400 to-green-600 text-white px-6 py-2 rounded-lg shadow-lg hover:brightness-110 transition-transform duration-300">
+                🚀 Explore
+            </button>
+        </div>
     </div>
+    }
 </div>
