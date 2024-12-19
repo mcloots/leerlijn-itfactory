@@ -3,7 +3,7 @@ import { Course, Tag } from '../course';
 import { CourseService } from '../course.service';
 import { CourseComponent } from '../course/course.component';
 import { FooterComponent } from "../footer/footer.component";
-import { filter, map } from 'rxjs';
+import { map } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

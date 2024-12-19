@@ -1,0 +1,725 @@
+{
+  "courses": [
+    {
+      "z_code": "Z26280",
+      "course_name": "Data Essentials",
+      "phase": 1,
+      "phase_is_mandatory": 1,
+      "semester": 1,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idm2656784_content\"><p><p>1. Datamodellering:</p><ul><li>Inleiding tot datamodellering</li><li>Begrippen primary key, foreign key, alternate key, constraints</li><li>Herkennen en benoemen van verschillende soorten relaties</li></ul><p>2. SQL:</p><ul><li>CREATE TABLE, INSERT, UPDATE, DELETE</li><li>SELECT-component</li><li>WHERE-component</li><li>Scalaire functies</li><li>Joins</li><li>Subquery’s</li><li>SET-functies</li><li>GROUP BY</li></ul><p>Doorheen het semester wordt deze leerstof toegepast in een project.</p><p>3. Document-georiënteerde databases</p><p> </p></p></div>",
+      "learning_track_id": 2,
+      "programme": "All",
+      "language": "NL,EN",
+      "objectives": [],
+      "tags": ["Data"]
+    },
+    {
+      "z_code": "Z26276",
+      "course_name": "Operating Systems",
+      "phase": 1,
+      "phase_is_mandatory": 1,
+      "semester": 1,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp5658880_content\"><p><p><b>De leerstof van Linux bevat:</b></p><p>- Introduction to linux</p><p>- First use of linux</p><ul><li>Handling files and directories</li><li>Creating users and groups</li><li>Access Control</li><li>Getting help</li><li>Linux directory tree</li><li>Archiving and Compression</li><li>Package Manager</li><li>Pipelining + Redirection</li><li>Working with text</li><li>Scripting</li><li>Managing processes</li></ul><p><b>De leerstof van Windows CLI (Powershell) bevat:</b></p><p>- Wat is Powershell</p><p>- Powershell is object geörienteerd</p><p>- De opbouw van cmdlets</p><ul><li>Een overzicht van verschillende belangrijkste cmdlets</li><li>Het gebruik van aliassen en profiles</li><li>De pipeline en een paar belangrijke toepassingen verduidelijkt</li><li>De output van een cmdlet formatteren</li><li>Hoe input en output verzorgen bij cmdlets</li><li>Werken met objecten en modules en scripts</li><li>Een uitdagende opdracht om de leerstof van Powershell te integreren</li></ul></p></div>",
+      "learning_track_id": 4,
+      "programme": "All",
+      "language": "NL,EN",
+      "objectives": [
+        "Configureert via een command-line interface een besturingssysteem (via bash en Powershell)",
+        "Installeert de besturingssystemen Windows en Linux",
+        "Past \"hardening\" technologieën toe door Linux en Powershell technologieën toe te passen",
+        "Schrijft pipeline commando's om de configuratie van je besturingssysteem aan te passen en te automatiseren",
+        "Definiëert en beschrijft de basisbegrippen, processen, programma’s en componenten van de besturingssystemen Windows en Linux",
+        "Beveiligt een besturingssysteem door het correct gebruik van \"user management\"",
+        "Benoemt en beschrijft de basiscomponenten van een besturingssysteem en hun bijhorende functionaliteit"
+      ],
+      "tags": ["DevOps"]
+    },
+    {
+      "z_code": "Z25499",
+      "course_name": "Programming Essentials",
+      "phase": 1,
+      "phase_is_mandatory": 1,
+      "semester": 1,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp3722768_content\"><p><p>In het vak Python komen volgende thema's aan bod:</p><ul><li>Sequentie</li><li>Selectie</li><li>Iteratie</li><li>Strings</li><li>Tuple en List</li><li>Functies</li><li>Tekstbestanden</li><li>Data groeperen</li><li>Set en Dictionary</li><li>JSON bestanden</li></ul></p></div>",
+      "learning_track_id": 1,
+      "programme": "All",
+      "language": "NL,EN",
+      "objectives": [
+        "Ontwikkelt een programma dat in staat is om data van Data Interchange formats te lezen en aan te maken",
+        "Debugt en refactort geschreven Python programma's",
+        "Ontwikkelt een programma volgens “best practices”door het gebruik van functies en de regels van clean coding",
+        "Gebruikt reeds bestaande code op een efficiënte manier",
+        "Ontwikkelt een eenvoudig programma  met behulp van  correcte controlestructuren en variabele types",
+        "Analyseert een eenvoudige vraagstelling om deze vervolgens om te zetten naar een Python programma",
+        "Ontwikkelt een programma dat in staat is om data van sequentiële bestanden te manipuleren"
+      ],
+      "tags": ["Programming"]
+    },
+    {
+      "z_code": "Z25500",
+      "course_name": "Webdesign Essentials",
+      "phase": 1,
+      "phase_is_mandatory": 1,
+      "semester": 1,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp967792_content\"><p><p>In het opleidingsonderdeel webdesign essentials leer je standaardenconforme websites maken die voldoen aan de toegankelijkheidseisen van Anysurfer. De volgende thema's komen daarbij aan bod:</p><ul><li>HTML</li><li>CSS</li><li>Photoshop</li><li>Werken met een gridsysteem</li><li>Principes van goed webdesign in verband met toegankelijkheid, kleurgebruik, keuze van lettertypes en correct werken met afbeeldingen</li><li>Werken met een versiebeheerssysteem voor soloprojecten</li><li>FTP</li></ul></p></div>",
+      "learning_track_id": 1,
+      "programme": "All",
+      "language": "NL,EN",
+      "objectives": [
+        "Bouwt responsiviteit van een website uit voor verschillende platformen",
+        "Maakt en optimaliseert zelf correct beeldmateriaal",
+        "Voert toegankelijkheidstesten uit over een zelfgemaakte user interface",
+        "Structureert aangeboden informatie ten behoeve van zoekmachineoptimalisatie",
+        "Werkt met eenvoudig versiebeheer voor soloprojecten via een versiebeheersyteem",
+        "Maakt de gestructeerde informatie op om een specifieke doelgroep aan te spreken"
+      ],
+      "tags": ["Web"]
+    },
+    {
+      "z_code": "Z26285",
+      "course_name": "Cloud & DevOps",
+      "phase": 1,
+      "phase_is_mandatory": 1,
+      "semester": 2,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp5657584_content\"><p><ul><li>Introductie tot Cloud platforms, businessmodellen en services</li><li>Containers en creatie van containers</li><li>DevOps pipelines met GitHub Actions in de Cloud</li><li>Buildprocessen van verschillende programeertalen</li><li>CI/CD met Cloud hosting oplossingen</li><li>IaC container hosting met Docker Compose</li><li>Introductie tot monitoring met Prometheus</li><li>Eventuele uitbreidingen</li></ul></p></div>",
+      "learning_track_id": 4,
+      "programme": "All",
+      "language": "NL,EN",
+      "objectives": [
+        "Beschrijft de kernconcepten van cloudplatforms, inclusief de bedrijfsmodellen en technologieën waar ze van afhankelijk zijn, evenals instructies voor het gebruik van hun fundamentele diensten",
+        "Verbetert en bouwt basis DevOps pipeline automatiseringsscripts en maakt eenvoudige infrastructuur als code (IaC) configuraties",
+        "Legt de bruikbaarheid van containers uit en beschrijft hun werking, constructie en implementatieprocessen",
+        "Beschrijft en legt DevOps-principes, -functies en -tools uit"
+      ],
+      "tags": ["Cloud", "DevOps"]
+    },
+    {
+      "z_code": "Z26281",
+      "course_name": "Full Stack Essentials",
+      "phase": 1,
+      "phase_is_mandatory": 1,
+      "semester": 2,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp1600272_content\"><p><p>In dit OPO komende volgende thema's aan bod:</p><ul><li>Front-end Development<ul><li>Bootstrap en CSS</li><li>Responsief design</li><li>JavaScript voor interactiviteit en data ophalen</li><li>Webformulieren</li></ul></li><li>Back-end Development<ul><li>Python en FastAPI voor API's</li><li>SQL databases</li></ul></li><li>Version Control<ul><li>Git met feature branching workflow - GitHub</li></ul></li></ul></p></div>",
+      "learning_track_id": 1,
+      "programme": "All",
+      "language": "NL,EN",
+      "objectives": [
+        "Develop an API with an existing framework that allows GET and POST requests with underlying database interaction",
+        "Create web forms and send the filled-in data to an API",
+        "Write client-side scripts to enhance the user experience and retrieve data from an API",
+        "Use a version control system with feature branches for projects in a small team",
+        "Use an existing framework and customize it to meet customer requirements while limiting development time, taking responsiveness into account"
+      ],
+      "tags": ["Web", "Programming"]
+    },
+    {
+      "z_code": "Z26278",
+      "course_name": "IoT Essentials",
+      "phase": 1,
+      "phase_is_mandatory": 1,
+      "semester": 2,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp5672976_content\"><p><p>- Inleiding / uitleg landschap van IoT<br/>- Single Board Computer<br/>- GPIO: digitale interfacing<br/>- I2C: datasheets lezen<br/>- MQTT &amp; Thingspeak: visualisatie via cloud services<br/>- PWM sturing<br/>- Multithreading<br/>- SPI: Analoog naar Digitaal conversie<br/>- Microcontrollers: CircuitPython<br/>- SQL: datacaptatie<br/>- Messaging: creatie van events via mail, SMS service en push messages<br/>- AI op embedded platforms</p></p></div>",
+      "learning_track_id": 8,
+      "programme": "All",
+      "language": "NL,EN",
+      "objectives": [
+        "Legt de onderdelen en samenhang van een eenvoudige IoT oplossing uit",
+        "Presenteert en demonstreert de eigen IoT oplossing",
+        "Bouwt een werkende IoT oplossing met de aangeleerde technieken en licht de oplossing toe",
+        "Test de onderdelen en de integratie van zijn IoT oplossing"
+      ],
+      "tags": ["IoT"]
+    },
+    {
+      "z_code": "Z26277",
+      "course_name": "Network Essentials",
+      "phase": 1,
+      "phase_is_mandatory": 1,
+      "semester": 2,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp3721168_content\"><p><p>- Basic Switch and end device configuration<br/>- Protocols and Models <br/>- Physical Layer<br/>- Number Systems<br/>- Data Link Layer<br/>- Ethernet Switching <br/>- Network Layer<br/>- Address Resolution<br/>- âBasic Router Configuration<br/>- IPv4 Addressing<br/>- IPv6 Addressing <br/>- ICMP<br/>- Transport Layer <br/>- Application Layer<br/>- Switching Concepts<br/>- VLANs <br/>- Inter-VLAN Routing</p></p></div>",
+      "learning_track_id": 4,
+      "programme": "All",
+      "language": "NL,EN",
+      "objectives": [
+        "Maakt gebruik van IP-adresseringsschema’s in een gesubnet netwerk",
+        "Voorziet routers, switches van VLAN's en Inter-VLAN-routering en lost bijhorende problemen op",
+        "Benoemt de OSI- en TCP/IP-lagen",
+        "Identificeert de soorten media die gebruikt worden om gegevens over een netwerk te transporteren",
+        "Werkt met de verschillende mogelijke netwerkdevices en werkt netwerkadresseringschema’s uit",
+        "Configureert, optimaliseert, troubleshoot, beveiligt en onderhoudt netwerken met routers en switches"
+      ],
+      "tags": []
+    },
+    {
+      "z_code": "Z26279",
+      "course_name": "OO Development",
+      "phase": 1,
+      "phase_is_mandatory": 1,
+      "semester": 2,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idm2606000_content\"><p><p>Java-syntax en de basisprincipes van objectoriëntatie worden aangeleerd aan de hand van oefeningen in JEE met het framework Spring Boot.      </p><p>* Taalelementen in Java: syntax, iteraties, selecties<br/>* Klassen en objecten<br/>* Debugging<br/>* Werken met Java API<br/>* Overerving<br/>* Associaties<br/>* Model View Controller (MVC)</p></p></div>",
+      "learning_track_id": 1,
+      "programme": "All",
+      "language": "NL,EN",
+      "objectives": [],
+      "tags": ["Programming"]
+    },
+    {
+      "z_code": "Z16447",
+      "course_name": "Security Essentials",
+      "phase": 1,
+      "phase_is_mandatory": 1,
+      "semester": 2,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp3423552_content\"><p><p>- Introductie<br/>- CIANA<br/>- Social Engineering<br/>- Obfuscation<br/>- Steganography<br/>- Encoding<br/>- Hashing<br/>- Cryptography<br/>- Passwords<br/>- Risk Management<br/>- GDPR<br/>- OWASP 10<br/>- SSDLC<br/>- Responsible disclosure, bug bounty &amp; security auditing<br/>- A career in Cybersecurity</p></p></div>",
+      "learning_track_id": 4,
+      "programme": "All",
+      "language": "NL,EN",
+      "objectives": [
+        "Benoemt en gebruikt toepassingen van hashing algoritmes en je maakt gebruik van veilige hashing methodes om de integriteit van data te bewaken",
+        "Legt, door middel van de OWASP top , bedreigingen voor software uit",
+        "Herkent de organisaties die in België en Europa instaan voor cyberveiligheid",
+        "Benoemt de fases van de secure development lifecycle en herkent deze in voorbeelden",
+        "Definieert het gevaar van het menselijke aspect in IT",
+        "Duidt veilige wachtwoorden aan, je herkent hoe je persoonlijke wachtwoorden veilig beheert en je benoemt andere aanvullende of vervangende methoden bij wachtwoorden",
+        "Classificeert voorbeelden van de hedendaagse cyberdreigingen",
+        "Benoemt de impact van een cyberincident en je gebruikt de CIANA methode als richtlijn om veilige IT oplossingen te ontwikkelen en kiezen",
+        "Licht de GDPR wetgeving toe en past de gegevensbeschermingswetten en -praktijken toe",
+        "Beheerst de betekenis van obfuscation, steganografie en encoding en je identificeert deze technieken in concrete voorbeelden",
+        "Herkent verschillende jobs in cybersecurity en kunt ze vertalen naar de verschillende cybersecurity domeinen",
+        "Benoemt het belang van risicomanagement voor een organisatie en je identificeert de aspecten die belangrijk zijn bij het bepalen en vermijden van risico’s",
+        "Benoemt  hoe een responsible disclosure, een bug bounty programma of een security audit de veiligheid van een organisatie kunnen verhogen",
+        "Benoemt het verschil tussen symmetrische en asymmetrische encryptie en je kiest en gebruikt veilige cryptografische methoden om de privacy van data te bewaken"
+      ],
+      "tags": ["Security"]
+    },
+    {
+      "z_code": "Z26282",
+      "course_name": "Communication Skills 1",
+      "phase": 1,
+      "phase_is_mandatory": 1,
+      "semester": 3,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp151200_content\"><p><p>Studenten ontwikkelen hun communicatievaardigheden in het Nederlands en Engels. Dit omvat luisteren, spreken en schrijven. De student bundelt de gemaakte opdrachten in een portfolio. Dit portfolio kan bestaan uit (maar is niet beperkt tot): </p><ul><li>Notities van een telefoongesprek </li><li>Personal brand op CV, motivatiebrief, LinkedIn... </li><li>Analyse van een presentatie en voorbereiding van eigen presentatie </li><li>Reflectie op eigen case door middel van de Roos van Leary </li><li>Groepswerk en vergadernotulen </li><li>Lesnotities </li><li>... </li></ul></p></div>",
+      "learning_track_id": 9,
+      "programme": "All",
+      "language": "NL,EN",
+      "objectives": [
+        "Schrijft een e-mail die correct is opgebouwd, met alle benodigde informatie en zonder taalfouten",
+        "Geeft en ontvangt correcte feedback en demonstreert dit aan de hand van een concrete casus",
+        "Voert de opdrachten in correct en actief Nederlands of Engels uit, afhankelijk van de specifieke opdracht",
+        "Ontwikkelt een eigen methode om lesnotities en samenvattingen te maken",
+        "Bereidt een vergadering voor, neemt deel aan de vergadering en notuleert correct",
+        "Ontwikkelt zijn of haar Engelse en Nederlandse taalvaardigheid en communicatieve vaardigheid. Dit omvat luister-, spreek- en schrijfvaardigheden",
+        "Geeft een presentatie en gebruikt de besproken presentatietechnieken",
+        "Ontwikkelt een personal brand die als basis dient voor hun CV, motivatiebrief, LinkedIn en pitch",
+        "Brengt slecht nieuws of behandelt een klacht op een professionele en correcte manier",
+        "Analyseert, evalueert en beïnvloedt communicatiestijlen in interpersoonlijke communicatie",
+        "Telefoneert op een professionele manier en evalueert het gesprek van een andere student"
+      ],
+      "tags": ["Soft Skills & Communication"]
+    },
+    {
+      "z_code": "Z16448",
+      "course_name": "Skills Integration Lab 1",
+      "phase": 1,
+      "phase_is_mandatory": 1,
+      "semester": 3,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp930032_content\"><p><p>We starten met een onthaaldag waar SKIL-1 wordt ingeleid.</p><p>Tijdens SKIL-1 leert de student nadenken en reflecteren over zijn/haar professional skills. Hij/zij doet aan zelfsturing en ontwikkelt vaardigheden om zelf keuzes te kunnen maken in het uitstippelen van een realistisch en haalbaar traject en om vooruitgang te boeken in dit traject.</p><p>De student werkt naar een persoonlijk portfolio en eindpresentatie toe door verschillende thema's die verschillende onderdelen van het professioneel handelen onder de loep nemen. Er zijn regelmatige feedbackgesprekken met een coach.</p><p>De student werkt in teamverband een project uit voor een vooropgestelde doelgroep en stelt dit op een klantgerichte manier voor op een beurs.</p></p></div>",
+      "learning_track_id": 9,
+      "programme": "All",
+      "language": "NL,EN",
+      "objectives": [
+        "Neemt actief het eigen groeiproces in handen en toont je eigen groei tot professioneel IT'er aan",
+        "Voert gesprekken over je professioneel handelen en reflecteert hierop in je PPP",
+        "Analyseert je sterktes en zwaktes en stelt actiepunten op voor je PPP",
+        "Past de SCRUM methodologie toe om een proof of concept uit te werken"
+      ],
+      "tags": ["Soft Skills & Communication"]
+    },
+    {
+      "z_code": "Z13982",
+      "course_name": "RZL",
+      "phase": 3,
+      "phase_is_mandatory": 1,
+      "semester": 3,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp69344_content\"><p><p>Thema1 : Filosofische blik op religie en de samenleving</p><p>Wat is RZL? Wat betekenen termen als zingeving en ideologie?<br/>Hoe ervaren we de verschoven plek van godsdienst en levensbeschouwing in onze postmoderne samenleving?<br/>Getuigenis over de plaats en de rol van religie met bijzondere aandacht voor de rol van religieuze feesten, liturgie, sacrale ruimten…</p><p>Thema 2: Analyse van het fenomeen godsdienst</p><p>Wat is een godsdienst? Welke verbindingen bestaan er tussen de wereldgodsdiensten?<br/>Wat is de kern van het christelijke geloof?<br/>Getuigenis over de inhoud van de islam (5 zuilen, koran…) of Jodendom en  over de relatie islam-Jodendom-christendom-Westerse maatschappij</p><p>Thema 3:  Invloed van levensbeschouwing in het leven van elke dag.</p><p>Wat is de bijbelse visie op geluk?<br/>Hoe ontwikkelt een (seksuele) relatie zich? Hoe zien we de man-vrouw verhouding? Wat beduidt het christelijk begrip liefde?<br/>Getuigenis over dagdagelijks Christelijk leven.</p><p>Aanbod van avonden naast de lessen reeks waaruit studenten keuze moeten maken.</p><p>Daguitstap naar Antwerpen met bezoek aan de kathedraal, spreker, bezoek aan de stad ifv de Joodse en islamitische godsdienst en cultuur</p><p>Naast deze inhoudelijke lessen en de getuigenissen door de sprekers verkent de student op eigen kracht ook een deel van de geziene stof door middel van vrijwilligerswerk en zingevende activiteiten.</p></p></div>",
+      "learning_track_id": 11,
+      "programme": "All",
+      "language": "NL,EN",
+      "objectives": [
+        "Ontwikkelt een persoonlijke en onderbouwde visie omtrent levensbeschouwelijke vragen en fenomenen, in dialoog met het christelijke geloof;",
+        "Past de algemene theoretische visies uit theologie en religiewetenschappen toe op actuele maatschappelijke thema’s;",
+        "Ontwikkelt attitudes zoals stiptheid, discipline en beleefdheid tijdens het leertraject",
+        "Benoemt in verband met aspecten van het eigen leven de waarde van religie, zingeving en geloofshoudingen (‘levensbeschouwelijke bedachtzaamheid’);",
+        "Analyseert welke mens- en wereldbeelden aanwezig zijn in fenomenen in samenleving en cultuur, zoals bijvoorbeeld media, gezondheidszorg, economie, techniek, onderwijs, …;",
+        "Integreert levensbeschouwelijke dimensies in zijn eigen professionele identiteit;",
+        "Legt de eigenheid van levensbeschouwing(en) en religie(s), in het bijzonder van de christelijke geloofstraditie, uit aan de hand van concrete voorbeelden;",
+        "Verduidelijkt welke rol levensbeschouwing en religies, in het bijzonder de christelijke geloofstraditie, spelen in cultuur en samenleving;"
+      ],
+      "tags": []
+    },
+    {
+      "z_code": "Z13983",
+      "course_name": "Stage & Bachelorproef",
+      "phase": 3,
+      "phase_is_mandatory": 1,
+      "semester": 2,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idm496000_content\"><p><p>De stage vormt de kroon op het werk. De stage biedt de student de mogelijkheid om de competenties die hij reeds heeft verworven geïntegreerd toe te passen in een reële professionele en sociale werkomgeving die moeilijk of niet binnen de hogeschool kan worden aangeboden, die aansluit bij de aard en het niveau van de opleiding en die de mogelijkheid geeft om zijn competenties  (verder) te ontwikkelen. De stage biedt bovendien een belangrijk referentiepunt bij sollicitaties en het vinden van een betrekking.</p><p>De inhoud van de stage wordt bepaald door de stageplaats. De stage loopt in principe over 13 weken in het tweede semester (van begin maart tot einde mei) van het derde opleidingsjaar.</p><p>Gedurende de stageperiode werken de stagiairs in principe full time voor de stage en schikken ze zich naar de uurregeling die in het bedrijf geldt. Uitzondering hierop vormen de begeleidingssessies op school die van in het begin van de stage worden vastgelegd.<br/>Sluitingsdagen van het bedrijf worden vooraf besproken met de student en stagebegeleider.</p></p></div>",
+      "learning_track_id": null,
+      "programme": "All",
+      "language": "NL,EN",
+      "objectives": [],
+      "tags": []
+    },
+    {
+      "z_code": "Z16452",
+      "course_name": "Data Science",
+      "phase": 2,
+      "phase_is_mandatory": 1,
+      "semester": 1,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp1653728_content\"><p><p>Introductie DataScience</p><ul><li>De OSEMN-cycle van clean data (obtain, scrub, explore, model, interprete)</li><li>Installatie van een correcte werkomgeving (virtual environment)</li></ul><p>Advanced Programming in Python</p><ul><li>Extra functies zoals zip, enumerate, filter, map, …</li><li>Lambda expressions</li><li>List comprehensions</li></ul><p>Regex en scraping</p><ul><li>Reguliere expressies</li><li>Webscraping met BeautifulSoup</li></ul><p>Numpy</p><ul><li>Toegevoegde waarde en gebruik van Numpy</li><li>Visualiseren via Matplotlib</li><li>Uitbreiding naar statistiek:  centrummaten en spreidingsmaten, normaalverdeling, boxplot, histogram, outliers, ...</li></ul><p>Pandas</p><ul><li>Series en DataFrames</li><li>Extracting and assigning data</li><li>Voorwaardelijke selecties</li><li>Data verkennen met grafieken</li><li>Interpretatie van statistische resultaten</li></ul></p></div>",
+      "learning_track_id": 2,
+      "programme": "APPAI",
+      "language": "NL,EN",
+      "objectives": [
+        "Bedenkt een methode om data om te vormen naar een formaat dat de basis vormt voor onderzoek",
+        "Ontleedt data van al dan niet gestructureerde (open) databronnen",
+        "Onderzoekt de data om kenmerken te bepalen",
+        "Concludeert en adviseert op basis van voorgaande analyse"
+      ],
+      "tags": ["Data"]
+    },
+    {
+      "z_code": "Z26691",
+      "course_name": "Software Modeling and Design",
+      "phase": 2,
+      "phase_is_mandatory": 1,
+      "semester": 1,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp4077936_content\"><p><p> </p><ul><li>usecasemodellering,</li><li>datamodellering,</li><li>prototyping</li><li>Weighted Decision Matrix</li><li>Klassediagrammen met syntax en werkwijze en vertalen van klassediagram in code,</li><li>Sequentiediagrammen.</li><li>GRASP</li><li>Toestandsdiagrammen.</li><li>Applicatie- en implementatiestadium</li></ul></p></div>",
+      "learning_track_id": 9,
+      "programme": "APPAI",
+      "language": "NL,EN",
+      "objectives": [
+        "Vertaalt op basis van een uitgeschreven opdracht de eisen naar diagrammen in UML en houdt daarbij rekening met flexibiliteit, stabiliteit, volledigheid en eenvoud van het model",
+        "Past een klassediagram aan op basis van de inhoud van andere UML diagrammen",
+        "Verklaart de basisprincipes van Object-georiënteerde modelleren en past deze toe bij het opstellen van klasse- en sequentiediagrammen",
+        "Verklaart de GRASP-patronen aangereikt in het lesmateriaal en past deze toe",
+        "Onderzoekt en evalueert mogelijke oplossingen voor een uitgeschreven behoefte aan software ondersteuning en beveelt op basis hiervan een keuze aan met degelijke onderbouwing",
+        "Past een klassediagram aan op basis van de inhoud van andere UML diagrammenverklaart de basisprincipes van Object-georiënteerde modelleren en past deze toe bij het opstellen van klasse- en sequentiediagrammen",
+        "Identificeert functionele en niet-functionele eisen op basis van een duidelijk omlijnde en uitgeschreven software opdracht",
+        "Vertaalt een klassediagram naar code en vice versa"
+      ],
+      "tags": ["Design", "Analysis"]
+    },
+    {
+      "z_code": "Z26690",
+      "course_name": "The Digital Startup",
+      "phase": 2,
+      "phase_is_mandatory": 1,
+      "semester": 1,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp5632432_content\"><p><ul><li>Entrepreneurship./Intrapreneurship</li><li>Value Proposition Canvas</li><li>Kennis huidig economisch landschap</li><li>Kennis Intellectual Property</li><li>Business Model Canvas (BMC)</li><li>Succes ontrafeld</li><li>Testmethodieken voor business ideeën</li><li>7S model van McKinsey: strategie, structuur, systeem</li><li>7S model van McKinsey: staff, skills, style</li><li>7S model van McKinsey: shared values</li><li>Opbouw van een overtuigende business pitch</li></ul><p>De gekozen onderwerpen zijn universeel en gaan langer mee dan eender welke technische vakkennis zodat de studenten met meer maturiteit naar de arbeidsmarkt kunnen.</p></p></div>",
+      "learning_track_id": 10,
+      "programme": "APPAI",
+      "language": "NL,EN",
+      "objectives": [
+        "Vindt kansen om waarde voor anderen te creëren, valideert deze en zet deze om in oplossingen",
+        "Begrijpt de bedrijfseconomische context vanuit verschillende invalshoeken",
+        "Werkt actief en effectief samen in een groep",
+        "Maakt onderbouwde strategische keuzes",
+        "Werkt het fundament van een goed ondernemingsplan uit aan de hand van waardepropositie-ontwerp en business model canvas",
+        "Enthousiasmeert anderen om mee te gaan in een vernieuwing en pitcht ideeën"
+      ],
+      "tags": ["Business"]
+    },
+    {
+      "z_code": "Z26694",
+      "course_name": "Web Development",
+      "phase": 2,
+      "phase_is_mandatory": 1,
+      "semester": 1,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp7329200_content\"><p><p><b>Tailwind</b></p><ul><li>Introduction</li><li>Examples</li></ul><p><b>Alpine.js</b></p><ul><li>Introduction</li><li>Examples</li></ul><p><b>PHP</b></p><ul><li>Introduction</li><li>Example project</li><li>Basic syntax</li><li>Operators</li><li>Control structures</li><li>Arrays</li><li>Functions</li><li>Forms</li><li>Classes</li></ul><p><b>Laravel/Livewire</b></p><ul><li>Introduction</li><li>The Vinyl Shop project</li><li>Basic routing &amp; views</li><li>Basic controllers</li><li>Basic Blade</li><li>Automation</li><li>Database migrations</li><li>Eloquent models</li><li>Contact page</li><li>Authentication</li><li>Custom error pages</li><li>CRUD operations</li></ul></p></div>",
+      "learning_track_id": 1,
+      "programme": "APPAI",
+      "language": "NL,EN",
+      "objectives": [
+        "Maakt gebruik van AlpineJS om client-side interactie toe te voegen",
+        "Ontwikkelt een gebruiksvriendelijke responsieve user interface met Tailwind CSS",
+        "Ontwikkelt een full-stack applicatie met de TALL-stack",
+        "Ontwikkelt een CRUD applicatie via het MVC ontwerppatroon in Laravel",
+        "Beheerst de basisprincipes van PHP"
+      ],
+      "tags": ["Web", "Programming"]
+    },
+    {
+      "z_code": "Z16461",
+      "course_name": "React & .NET API Development",
+      "phase": 2,
+      "phase_is_mandatory": 1,
+      "semester": 2,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp4070496_content\"><p><ul><li>Introduction C#</li><li>Basic API</li><li>API - Returning resources</li><li>EF Core </li><li>Mapping (AutoMapper)</li><li>Dependency Injection</li><li>Data Access Pattern (repository - DTO)</li><li>Searching/Filtering/Paging</li><li>Securing API</li><li>Versioning API</li><li>Deploying</li><li>Unit Testing</li><li>Testing API</li><li>Microservices</li></ul></p></div>",
+      "learning_track_id": 1,
+      "programme": "APPAI",
+      "language": "NL,EN",
+      "objectives": [
+        "Test de componenten van de uitgewerkte API",
+        "Past de principes van gedistribueerde ontwikkeling toe bij het bouwen een eenvoudige microservice die een specifieke functionaliteit biedt binnen een grotere applicatie",
+        "Begrijpt hoe ORM persistentie technieken zoals Entity Framework (EF) werken in .NET applicaties",
+        "Begrijpt hoe data access patterns leiden tot een verbeterde testbaarheid en een meer robuuste en schaalbare API architectuur",
+        "Herkent de basiscomponenten van een REST API gebouwd met het MVC.NET framework",
+        "Bouwt gebruikmakend van het MVC.NET framework en Entitity Framework een REST API gestuctureerd conform vernoemde ontwerppatronen en consumeert deze binnen een webtoepassing"
+      ],
+      "tags": ["Web", "Programming"]
+    },
+    {
+      "z_code": "Z26286",
+      "course_name": "Artificial Intelligence",
+      "phase": 2,
+      "phase_is_mandatory": 1,
+      "semester": 2,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp5637168_content\"><p><p><b>Artificial Intelligence</b><br/>- Recursion <br/>- Graph Search Algorithms</p><p><b>Machine Learning</b><br/>- Supervised Leaning: Regression, with Linear Regression algorithm<br/>- Supervised Learning: Classification, with Decision Trees &amp; Random Forest algorithm<br/>- Unsupervised Learning: Clustering &amp; Recommender Systems</p><p><b>Deep Learning</b><br/>- Artificial Neural Networks<br/>- Computer Vision &amp; Convolutional Neural Networks<br/>- Transfer Learning <br/>- Natural Language Processing</p></p></div>",
+      "learning_track_id": 2,
+      "programme": "APPAI",
+      "language": "NL,EN",
+      "objectives": [
+        "Kan verschillende zoekalgoritmen toepassen bij het oplossen van Artificiële Intelligentie problemen",
+        "Gebruikt Deep Learning om een neural network te trainen en te testen",
+        "Kan oordelen welke Machine Learning algorithmen het meest geschikt zijn en deze toepassen in Python"
+      ],
+      "tags": ["AI"]
+    },
+    {
+      "z_code": "Z26698",
+      "course_name": "Business Processes & ITIL",
+      "phase": 2,
+      "phase_is_mandatory": 1,
+      "semester": 2,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp7223824_content\"><p><p>• Business IT alignment<br/>• Business process management<br/>• Business process modeling<br/>• Enterprise resource planning<br/>• Procurement concepts and process<br/>• Sales concepts and process<br/>• ITIL &amp; ITSM basic concepts<br/>• ITIL processes, practices and related technical tools</p></p></div>",
+      "learning_track_id": 10,
+      "programme": "APPAI",
+      "language": "NL,EN",
+      "objectives": [
+        "Toont het belang aan van Business IT alignment en evalueert het alignmentniveau aan de hand van verschillende modellen",
+        "Benoemt de processtappen in het inkoop- en verkoopproces en voert de verschillende processtappen uit in een ERP-pakket",
+        "Analyseert in samenwerking met je peers een bedrijfsproces en visualiseert dit vervolgens in BPMN",
+        "Demonstreert het gebruik van IT processen en tools bij het online brengen van nieuwe features en het opzetten en uitvoeren van incident- en service respons binnen IT als service",
+        "Beschrijft de conceptuele aspecten, IT processen en technieken die gepaard gaan met het online brengen van nieuwe features, incident- en service response en het aanbieden van IT als service",
+        "Kent de definitie van een ERP-systeem en de marktleiders en technologieën in het huidige ERP-landschap"
+      ],
+      "tags": ["Business"]
+    },
+    {
+      "z_code": "Z25514",
+      "course_name": "Data Visualisation",
+      "phase": 2,
+      "phase_is_mandatory": 1,
+      "semester": 2,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp5357104_content\"><p><p>Volgende thema's komen aan bod en worden bestudeerd met de tool Qlik Sense Business:</p><ul><li>Best practices</li><li>Bouwstenen om een datavisualisatie op te bouwen</li><li>Statistische visualisaties</li><li>Sorteren en filteren van data</li><li>Werken met expressies en variabelen</li><li>Set Analysis</li><li>Master items</li><li>Buttons en images</li><li>Storytelling </li></ul></p></div>",
+      "learning_track_id": 2,
+      "programme": "APPAI",
+      "language": "NL,EN",
+      "objectives": [
+        "Maakt duidelijke en aantrekkelijke datavisualisaties die de boodschap effectief overbrengen, rekening houdend met best practices en de principes van visuele perceptie",
+        "Brengt afzonderlijke visualisaties samen tot een samenhangend, gebruiksvriendelijk, verhalend (storytelling) dashboard waaruit belanghebbenden inzichten kunnen verkrijgen",
+        "Identificeert betekenisvolle patronen, trends en relaties door gemaakte visualisaties te interpreteren",
+        "Selecteert de juiste grafieken en visualisatietechnieken op basis van de aard van de gegevens en de beoogde boodschap",
+        "Licht de resultaten en bevindingen van een dashboard duidelijk en effectief toe aan belanghebbenden"
+      ],
+      "tags": ["Data"]
+    },
+    {
+      "z_code": "Z26695",
+      "course_name": "Java Development",
+      "phase": 2,
+      "phase_is_mandatory": 1,
+      "semester": 2,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idm1464848_content\"><p><p>In het vak Java Development komen volgende thema's aan bod:</p><ul><li>Werken met Lambda-functies en streams </li><li>JPA</li><li>REST API</li><li>Overerving (in JPA)</li><li>Associaties (in JPA)</li><li>Exceptions</li><li>Security &amp; authentication</li><li>Unit testing met Mocking &amp; Stubbing</li><li>GOF Design patterns</li><li>SOLID en refactoring</li><li>Microservices</li></ul></p></div>",
+      "learning_track_id": 1,
+      "programme": "APPAI",
+      "language": "NL,EN",
+      "objectives": [],
+      "tags": ["Programming"]
+    },
+    {
+      "z_code": "Z26699",
+      "course_name": "Skills Integration Lab 2",
+      "phase": 2,
+      "phase_is_mandatory": 1,
+      "semester": 3,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idm3541536_content\"><p><p>• professionele ontwikkeling: soft skills op de werkvloer, ethiek, training geven, internationalisering, professioneel netwerk uitbouwen...<br/>• uitwerking project volgens scrum-methodologie voor interne opdrachtgever</p></p></div>",
+      "learning_track_id": 9,
+      "programme": "All",
+      "language": "NL,EN",
+      "objectives": [],
+      "tags": ["Soft Skills & Communication"]
+    },
+    {
+      "z_code": "Z26666",
+      "course_name": "Communication Skills 2",
+      "phase": 2,
+      "phase_is_mandatory": 1,
+      "semester": 3,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp1701296_content\"><p><p>Studenten ontwikkelen hun communicatievaardigheden in het Nederlands en Engels. Dit omvat luisteren, spreken en schrijven. De student bundelt de gemaakte opdrachten in een portfolio. Dit portfolio kan bestaan uit (maar is niet beperkt tot): </p><ul><li>Voorbereiding op een klantengesprek </li><li>Eindrapport voor een klant </li><li>Onderzoekspapers naar maatschappelijk relevante topics </li><li>Presentatie over interculturele vaardigheden </li><li>Reflectie over overtuigings- en onderhandelingstechnieken </li><li>... </li></ul></p></div>",
+      "learning_track_id": 9,
+      "programme": "All",
+      "language": "NL,EN",
+      "objectives": [
+        "Voert professionele gesprekken met een klant",
+        "Presenteert zijn of haar werk, rekening houdend met de noden van het publiek",
+        "Creëert een leesbaar eindrapport met betrouwbare bronnen",
+        "Onderzoekt maatschappelijk relevante topics, toegepast op de werkvloer",
+        "Participeert in klasdiscussies, activiteiten en opdrachten in correct Nederlands en Engels",
+        "Reflecteert over zijn of haar basistechnieken om zich aan te passen aan nieuwe situaties, anderen te overtuigen en onderhandelen",
+        "Ontwikkelt zowel zijn of haar Engelse en Nederlandse communicatieve vaardigheden. Dit omvat luister-, spreek- en schrijfvaardigheden"
+      ],
+      "tags": ["Soft Skills & Communication"]
+    },
+    {
+      "z_code": "Z26701",
+      "course_name": "Mobile & AR Development",
+      "phase": 3,
+      "phase_is_mandatory": 1,
+      "semester": 1,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idm155888_content\"><p><p>Flutter (Cross-platform Apps):<br/> - Write a Flutter app that looks natural on iOS, Android, and the web <br/> - Basic structure of a Flutter app <br/> - Finding and using packages to extend functionality <br/> - Implement a stateful widget <br/> - Add interactivity to a stateful widget <br/> - Create and navigate to a second screen <br/> - Change the look of an app using themes<br/> - Call an API</p><p>Unity en Vuforia (Augmented Reality):<br/> - Image Recognition: Recognize images and overlay it with images<br/> - Instant Tracking and 3D Rendering<br/> - Object and Scene Tracking<br/> - Video Drawables: Add videos in an augmented reality scene</p></p></div>",
+      "learning_track_id": 1,
+      "programme": "APP",
+      "language": "NL",
+      "objectives": [],
+      "tags": ["Programming"]
+    },
+    {
+      "z_code": "Z26703",
+      "course_name": "AI .NET",
+      "phase": 3,
+      "phase_is_mandatory": 1,
+      "semester": 1,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp5631184_content\"><p><p>- .NET Maui<br/>- XAML<br/>- MVVM design pattern<br/>- MVVM Community Toolkit<br/>- ObservableObject, ObservableCollection, RelayCommand<br/>- NavigationService, Messenger</p><p>- Azure AI services<br/>- Custom Vision Models<br/>- CLU Models</p><p>- Microsoft Bot Framework<br/>- Dialogs<br/>- Rich Activity Cards, Adaptive Cards<br/> </p></p></div>",
+      "learning_track_id": 1,
+      "programme": "APP",
+      "language": "NL",
+      "objectives": [
+        "Leert werken met de Azure AI services en traint AI modellen voor NLP en Computer Vision",
+        "Integreert in je chatbot een Conversational Language Understanding Model",
+        "Ontwikkelt een chatbot met het Microsoft Bot framework en communiceert m.b.v. dialogen met je eindgebruiker",
+        "Integreert je chatbot met een database gebruik makend van het Repository design patroon",
+        "Integreert in de App een Computer Vision model voor Object Detectie, Image Classification, OCR,",
+        "Ontwerpt een .NET Maui appliciatie met het MVVM patroon"
+      ],
+      "tags": ["AI", "Programming"]
+    },
+    {
+      "z_code": "Z13980",
+      "course_name": "Skills Integration Lab 3",
+      "phase": 3,
+      "phase_is_mandatory": 1,
+      "semester": 3,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idm2220384_content\"><p><p>- Het portfolio ombouwen tot een afstudeerportfolio en de competenties bewijzen<br/>- Stage voorbereiden<br/>- Sollicitatietraining en -carrousel<br/>- Persoonlijk professionaliseringstraject (t.w.v. 1 studiepunt) succesvol afleggen</p></p></div>",
+      "learning_track_id": 9,
+      "programme": "All",
+      "language": "NL,EN",
+      "objectives": [],
+      "tags": [
+        "Soft Skills & Communication",
+        "DevOps",
+        "Web",
+        "Programming",
+        "Cloud",
+        "AI"
+      ]
+    },
+    {
+      "z_code": "Z00001",
+      "course_name": "UI/UX",
+      "phase": 3,
+      "phase_is_mandatory": 1,
+      "semester": 1,
+      "learning_contents": "1",
+      "learning_track_id": 1,
+      "programme": "APP",
+      "language": "NL",
+      "objectives": [],
+      "tags": ["Design", "Web"]
+    },
+    {
+      "z_code": "Z00002",
+      "course_name": "Application Security",
+      "phase": 3,
+      "phase_is_mandatory": 1,
+      "semester": 1,
+      "learning_contents": null,
+      "learning_track_id": 4,
+      "programme": "APP",
+      "language": "NL",
+      "objectives": [],
+      "tags": ["Security"]
+    },
+    {
+      "z_code": "Z00003",
+      "course_name": "Data Engineering",
+      "phase": 3,
+      "phase_is_mandatory": 1,
+      "semester": 1,
+      "learning_contents": null,
+      "learning_track_id": 2,
+      "programme": "AI",
+      "language": "EN",
+      "objectives": [],
+      "tags": ["AI", "Data"]
+    },
+    {
+      "z_code": "Z00004",
+      "course_name": "Business Intelligence",
+      "phase": 3,
+      "phase_is_mandatory": 1,
+      "semester": 1,
+      "learning_contents": null,
+      "learning_track_id": 2,
+      "programme": "AI",
+      "language": "EN",
+      "objectives": [],
+      "tags": ["Business", "AI"]
+    },
+    {
+      "z_code": "Z00007",
+      "course_name": "Application Security",
+      "phase": 3,
+      "phase_is_mandatory": 1,
+      "semester": 1,
+      "learning_contents": null,
+      "learning_track_id": 4,
+      "programme": "AI",
+      "language": "EN",
+      "objectives": [],
+      "tags": ["Security"]
+    },
+    {
+      "z_code": "Z00008",
+      "course_name": "Communication Skills 3",
+      "phase": 3,
+      "phase_is_mandatory": 1,
+      "semester": 3,
+      "learning_contents": null,
+      "learning_track_id": 9,
+      "programme": "All",
+      "language": "NL,EN",
+      "objectives": [],
+      "tags": ["Soft Skills & Communication"]
+    },
+    {
+      "z_code": "Z25516",
+      "course_name": "Full Stack Software Engineering",
+      "phase": 3,
+      "phase_is_mandatory": 0,
+      "semester": 1,
+      "learning_contents": "<div class=\"tab_content level_1\" id=\"tab_inhoud_idp1750224_content\"><p><p><b>Angular</b></p><ul><li>Components</li><li>Data binding</li><li>Modules</li><li>Services</li><li>HTTP</li><li>Observables en RxJS/Signals</li><li>Component interaction</li><li>Routing</li><li>CSS-framework integratie</li><li>Forms</li><li>Deployment</li><li>Testing</li></ul><p>+ Integratie met een API</p></p></div>",
+      "learning_track_id": 1,
+      "programme": "APPAI",
+      "language": "EN",
+      "objectives": [
+        "Pitcht de eindoplossing voor een jury van mensen met expertise",
+        "Werkt samen met andere studenten in een team op een professionele en constructieve manier",
+        "Zoekt zelfstandig naar oplossingen en toetst de correctheid met de docent/expert",
+        "Ontwikkelt een web applicatie op basis van vooropgestelde functionele vereisten",
+        "Splitst een opdracht op in kleinere onderdelen om zo gestructureerd tot een oplossing te komen",
+        "Gebruikt tools om efficiënter tot programmacode te komen",
+        "Past de best practices toe die voor het framework vooropgesteld zijn"
+      ],
+      "tags": ["Web", "Programming", "DevOps"]
+    },
+    {
+      "z_code": "Z00005",
+      "course_name": "Enterprise Solutions",
+      "phase": 3,
+      "phase_is_mandatory": 0,
+      "semester": 1,
+      "learning_contents": null,
+      "learning_track_id": 10,
+      "programme": "APPAI",
+      "language": "EN",
+      "objectives": [],
+      "tags": ["Business", "Programming", "AI"]
+    },
+    {
+      "z_code": "Z00006",
+      "course_name": "Machine Learning",
+      "phase": 3,
+      "phase_is_mandatory": 0,
+      "semester": 1,
+      "learning_contents": null,
+      "learning_track_id": 2,
+      "programme": "APPAI",
+      "language": "EN",
+      "objectives": [],
+      "tags": ["AI", "Programming"]
+    }
+  ],
+  "tags": [
+    {
+      "id": 6,
+      "name": "AI",
+      "hex_color": "#F1C40F"
+    },
+    {
+      "id": 35,
+      "name": "Analysis",
+      "hex_color": "#27AE60"
+    },
+    {
+      "id": 2,
+      "name": "App",
+      "hex_color": "#9B59B6"
+    },
+    {
+      "id": 3,
+      "name": "Business",
+      "hex_color": "#2ECC71"
+    },
+    {
+      "id": 4,
+      "name": "Cloud",
+      "hex_color": "#1ABC9C"
+    },
+    {
+      "id": 7,
+      "name": "Data",
+      "hex_color": "#2980B9"
+    },
+    {
+      "id": 8,
+      "name": "Design",
+      "hex_color": "#E67E22"
+    },
+    {
+      "id": 9,
+      "name": "DevOps",
+      "hex_color": "#8E44AD"
+    },
+    {
+      "id": 10,
+      "name": "Infra",
+      "hex_color": "#34495E"
+    },
+    {
+      "id": 34,
+      "name": "IoT",
+      "hex_color": "#D35400"
+    },
+    {
+      "id": 11,
+      "name": "Programming",
+      "hex_color": "#16A085"
+    },
+    {
+      "id": 5,
+      "name": "Security",
+      "hex_color": "#E74C3C"
+    },
+    {
+      "id": 37,
+      "name": "Soft Skills & Communication",
+      "hex_color": "#fa3084"
+    },
+    {
+      "id": 1,
+      "name": "Web",
+      "hex_color": "#3498DB"
+    }
+  ]
+}
