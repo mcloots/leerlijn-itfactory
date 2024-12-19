@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -8,7 +8,8 @@ import { RouterModule } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
+
   showGrid = false; // Controleert of de grid zichtbaar is
   isMuted = false; // Controls the audio mute state
   titleText = 'Press Start to Continue… Your IT adventure awaits!'
@@ -16,6 +17,10 @@ export class HomeComponent {
 
   @ViewChild('backgroundAudio') backgroundAudio!: ElementRef<HTMLAudioElement>;
   @ViewChild('selectAudio') selectAudio!: ElementRef<HTMLAudioElement>;
+
+  ngAfterViewInit(): void {
+    this.backgroundAudio.nativeElement.play();
+  }
 
   onStart() {
     this.selectAudio.nativeElement.play(); // Play the select sound once
@@ -26,6 +31,7 @@ export class HomeComponent {
   toggleMute() {
     this.isMuted = !this.isMuted;
     this.backgroundAudio.nativeElement.muted = this.isMuted;
+    this.backgroundAudio.nativeElement.play();
   }
 
   resetToInitialState() {

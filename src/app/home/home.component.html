@@ -18,7 +18,7 @@
     </button>
 
     <!-- Audio Element -->
-    <audio #backgroundAudio [src]="'/background.mp4'" autoplay loop [muted]="isMuted"></audio>
+    <audio #backgroundAudio [src]="'/background.mp4'" loop [muted]="isMuted"></audio>
 
     <!-- Select Button Sound -->
     <audio #selectAudio [src]="'/select.mp3'"></audio>
@@ -90,7 +90,7 @@
 
             <!-- Navigate Button -->
             <button [routerLink]="selectedProfile.route"
-                class="bg-gradient-to-b from-green-400 to-green-600 text-white px-6 py-2 rounded-lg shadow-lg hover:brightness-110 transition-transform duration-300">
+                class="bg-gradient-to-b from-orange-400 to-orange-800 text-white px-6 py-2 rounded-lg shadow-lg hover:brightness-110 transition-transform duration-300">
                 🚀 Explore
             </button>
         </div>
