@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
 export class HomeComponent implements AfterViewInit {
 
   showGrid = false; // Controleert of de grid zichtbaar is
-  isMuted = false; // Controls the audio mute state
+  isMuted = true; // Controls the audio mute state
   titleText = 'Press Start to Continue… Your IT adventure awaits!'
   selectedProfile: any = null; // The currently selected profile
 
@@ -31,7 +31,9 @@ export class HomeComponent implements AfterViewInit {
   toggleMute() {
     this.isMuted = !this.isMuted;
     this.backgroundAudio.nativeElement.muted = this.isMuted;
-    this.backgroundAudio.nativeElement.play();
+    if (!this.isMuted) {
+      this.backgroundAudio.nativeElement.play();
+    }
   }
 
   resetToInitialState() {
