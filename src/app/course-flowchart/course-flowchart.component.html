@@ -1,120 +1,122 @@
-@if(courses) {
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 p-2">
-  <!-- Phase 1 (Year 1) -->
-  <div>
-    <h1 class="font-bold text-xl text-center mb-4">Year 1 (Phase 1)</h1>
-    <div class="grid grid-cols-2 gap-4">
-      <!-- Semester 1 -->
-      <div class="col-span-1">
-        <h2 class="font-bold text-lg text-center mb-2">Semester 1</h2>
-        @for (course of getCourses(1, 1); track $index) {
-        <app-course [course]="course" [isReused]="isReused"
-          [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
-          [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
-          (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
-        }
-      </div>
+<div class="min-h-screen flex flex-col bg-black">
+  @if(courses) {
+  <div class="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-8 p-2 mb-96 font-orbi bg-black  text-white">
+    <!-- Phase 1 (Year 1) -->
+    <div>
+      <h1 class="font-bold text-xl text-center mb-4">Year 1 (Phase 1)</h1>
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Semester 1 -->
+        <div class="col-span-1">
+          <h2 class="font-bold text-lg text-center mb-2">Semester 1</h2>
+          @for (course of getCourses(1, 1); track $index) {
+          <app-course [course]="course" [isReused]="isReused"
+            [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
+            [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
+            (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
+          }
+        </div>
 
-      <!-- Semester 2 -->
-      <div class="col-span-1">
-        <h2 class="font-bold text-lg text-center mb-2">Semester 2</h2>
-        @for (course of getCourses(1, 2); track $index) {
-        <app-course [course]="course" [isReused]="isReused"
-          [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
-          [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
-          (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
-        }
-      </div>
+        <!-- Semester 2 -->
+        <div class="col-span-1">
+          <h2 class="font-bold text-lg text-center mb-2">Semester 2</h2>
+          @for (course of getCourses(1, 2); track $index) {
+          <app-course [course]="course" [isReused]="isReused"
+            [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
+            [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
+            (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
+          }
+        </div>
 
-      <!-- Semester 3 -->
-      <div class="col-span-2">
-        @for (course of getCourses(1, 3); track $index) {
-        <app-course [course]="course" [isReused]="isReused"
-          [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
-          [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
-          (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
-        }
+        <!-- Semester 3 -->
+        <div class="col-span-2">
+          @for (course of getCourses(1, 3); track $index) {
+          <app-course [course]="course" [isReused]="isReused"
+            [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
+            [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
+            (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 2 (Year 2) -->
+    <div>
+      <h1 class="font-bold text-xl text-center mb-4">Year 2 (Phase 2)</h1>
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Semester 1 -->
+        <div class="col-span-1">
+          <h2 class="font-bold text-lg text-center mb-2">Semester 1</h2>
+          @for (course of getCourses(2, 1); track $index) {
+          <app-course [course]="course" [isReused]="isReused"
+            [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
+            [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
+            (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
+          }
+        </div>
+
+        <!-- Semester 2 -->
+        <div class="col-span-1">
+          <h2 class="font-bold text-lg text-center mb-2">Semester 2</h2>
+          @for (course of getCourses(2, 2); track $index) {
+          <app-course [course]="course" [isReused]="isReused"
+            [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
+            [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
+            (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
+          }
+        </div>
+
+        <!-- Semester 3 -->
+        <div class="col-span-2">
+          @for (course of getCourses(2, 3); track $index) {
+          <app-course [course]="course" [isReused]="isReused"
+            [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
+            [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
+            (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 3 (Year 3) -->
+    <div>
+      <h1 class="font-bold text-xl text-center mb-4">Year 3 (Phase 3)</h1>
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Semester 1 -->
+        <div class="col-span-1">
+          <h2 class="font-bold text-lg text-center mb-2">Semester 1</h2>
+          @for (course of getCourses(3, 1); track $index) {
+          <app-course [course]="course" [isReused]="isReused"
+            [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
+            [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
+            (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
+          }
+        </div>
+
+        <!-- Semester 2 -->
+        <div class="col-span-1">
+          <h2 class="font-bold text-lg text-center mb-2">Semester 2</h2>
+          @for (course of getCourses(3, 2); track $index) {
+          <app-course [course]="course" [isReused]="isReused"
+            [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
+            [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
+            (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
+          }
+        </div>
+
+        <!-- Semester 3 -->
+        <div class="col-span-2">
+          @for (course of getCourses(3, 3); track $index) {
+          <app-course [course]="course" [isReused]="isReused"
+            [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
+            [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
+            (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
+          }
+        </div>
       </div>
     </div>
   </div>
-
-  <!-- Phase 2 (Year 2) -->
-  <div>
-    <h1 class="font-bold text-xl text-center mb-4">Year 2 (Phase 2)</h1>
-    <div class="grid grid-cols-2 gap-4">
-      <!-- Semester 1 -->
-      <div class="col-span-1">
-        <h2 class="font-bold text-lg text-center mb-2">Semester 1</h2>
-        @for (course of getCourses(2, 1); track $index) {
-        <app-course [course]="course" [isReused]="isReused"
-          [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
-          [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
-          (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
-        }
-      </div>
-
-      <!-- Semester 2 -->
-      <div class="col-span-1">
-        <h2 class="font-bold text-lg text-center mb-2">Semester 2</h2>
-        @for (course of getCourses(2, 2); track $index) {
-        <app-course [course]="course" [isReused]="isReused"
-          [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
-          [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
-          (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
-        }
-      </div>
-
-      <!-- Semester 3 -->
-      <div class="col-span-2">
-        @for (course of getCourses(2, 3); track $index) {
-        <app-course [course]="course" [isReused]="isReused"
-          [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
-          [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
-          (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
-        }
-      </div>
-    </div>
-  </div>
-
-  <!-- Phase 3 (Year 3) -->
-  <div>
-    <h1 class="font-bold text-xl text-center mb-4">Year 3 (Phase 3)</h1>
-    <div class="grid grid-cols-2 gap-4">
-      <!-- Semester 1 -->
-      <div class="col-span-1">
-        <h2 class="font-bold text-lg text-center mb-2">Semester 1</h2>
-        @for (course of getCourses(3, 1); track $index) {
-        <app-course [course]="course" [isReused]="isReused"
-          [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
-          [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
-          (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
-        }
-      </div>
-
-      <!-- Semester 2 -->
-      <div class="col-span-1">
-        <h2 class="font-bold text-lg text-center mb-2">Semester 2</h2>
-        @for (course of getCourses(3, 2); track $index) {
-        <app-course [course]="course" [isReused]="isReused"
-          [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
-          [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
-          (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
-        }
-      </div>
-
-      <!-- Semester 3 -->
-      <div class="col-span-2">
-        @for (course of getCourses(3, 3); track $index) {
-        <app-course [course]="course" [isReused]="isReused"
-          [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
-          [isTagIncluded]="isTagIncluded(course.tags)" [selectedTag]="selectedTag()"
-          (courseClick)="onCourseClicked(course.learning_track_id)"></app-course>
-        }
-      </div>
-    </div>
-  </div>
+  @if(!isReused && usedTags.length > 0) {
+  <app-footer [usedTags]="usedTags" (tagClick)="onTagClicked($event)"></app-footer>
+  }
+  }
 </div>
-@if(!isReused && usedTags.length > 0) {
-<app-footer [usedTags]="usedTags" (tagClick)="onTagClicked($event)"></app-footer>
-}
-}

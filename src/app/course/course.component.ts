@@ -21,12 +21,12 @@ export class CourseComponent {
   readonly dialog = inject(MatDialog);
 
   currentNgClass = computed(() => {
-    if (this.isHighlighted()) { return 'bg-orange-200' };
+    if (this.isHighlighted()) { return 'bg-orange-700' };
 
     if (!this.course().phase_is_mandatory) {
-      return 'bg-yellow-100'
+      return 'bg-green-800'
     }
-    return 'bg-blue-100';
+    return 'bg-gray-700';
   },
   );
 
