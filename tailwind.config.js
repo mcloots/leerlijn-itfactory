@@ -13,7 +13,8 @@ module.exports = {
         secondary: "#00283c",     // Secondary color
         tertiary: "#ffffff",      // Tertiary color
         text: "#000a1e",          // Text color
-        primaryDark: "#F04819",
+        primaryDark: "#f15e2f",
+        primaryDarkest: "#F04819",
         secondaryDark: "#002334",
         secondaryDarkest: "#020A1D",
 
