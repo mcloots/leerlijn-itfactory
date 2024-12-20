@@ -1,17 +1,17 @@
 <div (click)="openDetails($event, course())"
-     class="relative overflow-hidden group/course p-6 mb-2 text-center font-bold cursor-pointer bg-tertiary text-secondary dark:bg-secondary dark:text-tertiary dark:shadow-gray-800 dark:border dark:border-gray-700 shadow shadow-bgLight"
+     class="relative overflow-hidden group/course p-6 mb-2 text-center font-bold cursor-pointer bg-tertiary text-secondary dark:bg-secondary dark:text-tertiary dark:shadow-gray-800 dark:border dark:border-gray-700 shadow shadow-bgLight hover:scale-105 transition-all duration-500"
      [ngClass]="currentNgClass()" [ngStyle]="currentNgStyle()">
   <span class="z-10 relative">{{ course().course_name }}</span>
 
   <img
     src="/assets/patterns/circles-light.svg"
     alt="TM Checkered Background"
-    class="absolute inset-0 w-full h-full object-cover scale-120 z-0 opacity-0 group-hover/course:opacity-25 group-hover/course:scale-125 transition-opacity-transform duration-500 ease-in-out dark:hidden"
+    class="absolute inset-0 w-full h-full object-cover scale-120 z-0 opacity-0 group-hover/course:opacity-15 group-hover/course:scale-125 transition-opacity-transform duration-500 ease-in-out dark:hidden"
   >
   <img
     src="/assets/patterns/circles-dark.svg"
     alt="TM Circles Background"
-    class="absolute inset-0 w-full h-full object-cover scale-120 z-0 opacity-0 group-hover/course:opacity-25 group-hover/course:scale-125 transition-opacity-transform duration-500 ease-in-out hidden dark:block"
+    class="absolute inset-0 w-full h-full object-cover scale-120 z-0 opacity-0 group-hover/course:opacity-15 group-hover/course:scale-125 transition-opacity-transform duration-500 ease-in-out hidden dark:block"
   >
   <!-- <div class="absolute top-2 left-2 flex flex-col space-y-1">
      @if(course().language.toLowerCase().includes('nl')) {
