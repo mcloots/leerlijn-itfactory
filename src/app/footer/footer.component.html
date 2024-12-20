@@ -1,5 +1,5 @@
 <div
-    class="fixed w-full bottom-0 left-0 bg-secondary text-tertiary border-gray-300 p-4 md:flex justify-center hidden font-tmcandor dark:font-orbi font-bold dark:border-t dark:border-gray-700">
+    class="fixed z-40 w-full bottom-0 left-0 bg-tertiary text-secondary border-gray-300 p-4 md:flex justify-center hidden font-tmcandor dark:font-orbi font-bold border-t border-gray-200 dark:border-gray-700 dark:bg-secondary dark:text-tertiary">
     <div class="flex flex-wrap gap-4 space-x-4 items-center">
         @for (tag of tags; track $index) {
         <div class="flex items-center space-x-2 cursor-pointer" (click)="onTagClick(tag)">

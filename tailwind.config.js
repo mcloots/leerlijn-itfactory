@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        orbi: ["Orbitron", "sans-serif"],
+        orbi: ["Chakra Petch", "sans-serif"],
         tmcandor: ["TMCandor", "sans-serif"],
       },
       colors: {
@@ -13,12 +13,17 @@ module.exports = {
         secondary: "#00283c",     // Secondary color
         tertiary: "#ffffff",      // Tertiary color
         text: "#000a1e",          // Text color
+        primaryDark: "#F04819",
+        secondaryDark: "#002334",
+        secondaryDarkest: "#020A1D",
 
-        // Flattened background colors
+        // Background colors
         bgLight: "#dee1e4",       // Light background
         bgMuted: "#e8ebee",       // Muted background
         bgSoft: "#f2f5f8",        // Soft background
         bgLightest: "#F4F7F9",
+
+        bgGrayDark: "#101725",       // Dark background
       },
     },
   },
