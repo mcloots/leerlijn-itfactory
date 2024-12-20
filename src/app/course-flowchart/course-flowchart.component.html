@@ -1,16 +1,16 @@
-<div class="min-h-screen flex flex-col bg-tertiary">
+<div class="min-h-screen flex flex-col bg-tertiary md:pb-24 xl:pb-14">
   @if (courses) {
     <div
       class="flex-1 overflow-auto grid grid-cols-1 xl:grid-cols-3 gap-0 font-tmcandor dark:font-orbi text-secondary dark:text-tertiary">
       <!-- Phase 1 (Year 1) -->
       <div class="bg-bgLightest dark:bg-gray-700">
         <div class="p-10 bg-primary text-tertiary">
-          <h1 class="font-bold text-2xl text-center">Year 1 (Phase 1)</h1>
+          <h1 class="font-bold text-2xl text-center">🔍 Year 1 (Phase 1)</h1>
         </div>
         <div class="grid grid-cols-2 gap-4 p-8">
           <!-- Semester 1 -->
           <div class="col-span-1">
-            <h2 class="font-bold text-lg text-center mb-2">Semester 1</h2>
+            <h2 class="font-extrabold text-lg text-center mb-2">Semester 1</h2>
             @for (course of getCourses(1, 1);track $index) {
               <app-course [course]="course" [isReused]="isReused"
                           [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
@@ -21,7 +21,7 @@
 
           <!-- Semester 2 -->
           <div class="col-span-1">
-            <h2 class="font-bold text-lg text-center mb-2">Semester 2</h2>
+            <h2 class="font-extrabold text-lg text-center mb-2">Semester 2</h2>
             @for (course of getCourses(1, 2);track $index) {
               <app-course [course]="course" [isReused]="isReused"
                           [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
@@ -45,12 +45,12 @@
       <!-- Phase 2 (Year 2) -->
       <div class="bg-bgSoft dark:bg-gray-800">
         <div class="p-10 bg-secondary text-tertiary">
-          <h1 class="font-bold text-2xl text-center">Year 2 (Phase 2)</h1>
+          <h1 class="font-bold text-2xl text-center">🧭 Year 2 (Phase 2)</h1>
         </div>
         <div class="grid grid-cols-2 gap-4 p-8">
           <!-- Semester 1 -->
           <div class="col-span-1">
-            <h2 class="font-bold text-lg text-center mb-2">Semester 1</h2>
+            <h2 class="font-extrabold text-lg text-center mb-2">Semester 1</h2>
             @for (course of getCourses(2, 1);track $index) {
               <app-course [course]="course" [isReused]="isReused"
                           [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
@@ -61,7 +61,7 @@
 
           <!-- Semester 2 -->
           <div class="col-span-1">
-            <h2 class="font-bold text-lg text-center mb-2">Semester 2</h2>
+            <h2 class="font-extrabold text-lg text-center mb-2">Semester 2</h2>
             @for (course of getCourses(2, 2);track $index) {
               <app-course [course]="course" [isReused]="isReused"
                           [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
@@ -85,12 +85,12 @@
       <!-- Phase 3 (Year 3) -->
       <div class="bg-bgLightest dark:bg-gray-900">
         <div class="p-10 bg-text text-tertiary">
-          <h1 class="font-bold text-2xl text-center">Year 3 (Phase 3)</h1>
+          <h1 class="font-bold text-2xl text-center">🚀 Year 3 (Phase 3)</h1>
         </div>
         <div class="grid grid-cols-2 gap-4 p-8">
           <!-- Semester 1 -->
           <div class="col-span-1">
-            <h2 class="font-bold text-lg text-center mb-2">Semester 1</h2>
+            <h2 class="font-extrabold text-lg text-center mb-2">Semester 1</h2>
             @for (course of getCourses(3, 1);track $index) {
               <app-course [course]="course" [isReused]="isReused"
                           [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
@@ -101,7 +101,7 @@
 
           <!-- Semester 2 -->
           <div class="col-span-1">
-            <h2 class="font-bold text-lg text-center mb-2">Semester 2</h2>
+            <h2 class="font-extrabold text-lg text-center mb-2">Semester 2</h2>
             @for (course of getCourses(3, 2);track $index) {
               <app-course [course]="course" [isReused]="isReused"
                           [isHighlighted]="isCourseHighlighted(course.learning_track_id, course.z_code)"
