@@ -2,11 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Thin */
+@font-face {
+  font-family: 'TMCandor';
+  src: url('/assets/fonts/TMCandor-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Light */
+@font-face {
+  font-family: 'TMCandor';
+  src: url('/assets/fonts/TMCandor-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Regular */
+@font-face {
+  font-family: 'TMCandor';
+  src: url('/assets/fonts/TMCandor-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Medium */
+@font-face {
+  font-family: 'TMCandor';
+  src: url('/assets/fonts/TMCandor-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Semi Bold */
+@font-face {
+  font-family: 'TMCandor';
+  src: url('/assets/fonts/TMCandor-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'TMCandor';
+  src: url('/assets/fonts/TMCandor-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Black */
+@font-face {
+  font-family: 'TMCandor';
+  src: url('/assets/fonts/TMCandor-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 html,
 body {
   height: 100%;
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: TMCandor, "Helvetica Neue", sans-serif;
 }
+

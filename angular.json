@@ -24,7 +24,8 @@
                 "input": "public"
               },
               "src/_redirects",
-              "src/assets/db.json"
+              "src/assets/db.json",
+              "src/assets"
             ],
             "styles": [
               "@angular/material/prebuilt-themes/azure-blue.css",
@@ -99,5 +100,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

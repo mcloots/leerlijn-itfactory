@@ -1,0 +1,11 @@
+<div class="fixed top-4 right-4">
+  <button
+    (click)="toggleTheme()"
+    class="text-xl p-2 bg-gray-200 dark:bg-secondary rounded-full focus:outline-none dark:border dark:border-gray-700">
+    @if(!isDarkMode) {
+      <span>🌞</span>
+    } @else {
+      <span>🌙</span>
+    }
+  </button>
+</div>
