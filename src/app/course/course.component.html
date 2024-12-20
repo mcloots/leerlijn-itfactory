@@ -1,19 +1,31 @@
-<div (click)="openDetails($event, course())" class="relative p-6 mb-2 text-center font-bold cursor-pointer bg-tertiary text-secondary dark:bg-secondary dark:text-tertiary dark:shadow-gray-800 dark:border dark:border-gray-700 shadow shadow-bgLight"
-  [ngClass]="currentNgClass()" [ngStyle]="currentNgStyle()">
-  {{ course().course_name }}
+<div (click)="openDetails($event, course())"
+     class="relative overflow-hidden group/course p-6 mb-2 text-center font-bold cursor-pointer bg-tertiary text-secondary dark:bg-secondary dark:text-tertiary dark:shadow-gray-800 dark:border dark:border-gray-700 shadow shadow-bgLight"
+     [ngClass]="currentNgClass()" [ngStyle]="currentNgStyle()">
+  <span class="z-10 relative">{{ course().course_name }}</span>
 
- <!-- <div class="absolute top-2 left-2 flex flex-col space-y-1">
-    @if(course().language.toLowerCase().includes('nl')) {
-    <img src="be.png" class="w-5 h-auto" alt="Belgian Flag">
-    }
+  <img
+    src="/assets/patterns/circles-light.svg"
+    alt="TM Checkered Background"
+    class="absolute inset-0 w-full h-full object-cover scale-120 z-0 opacity-0 group-hover/course:opacity-25 group-hover/course:scale-125 transition-opacity-transform duration-500 ease-in-out dark:hidden"
+  >
+  <img
+    src="/assets/patterns/circles-dark.svg"
+    alt="TM Circles Background"
+    class="absolute inset-0 w-full h-full object-cover scale-120 z-0 opacity-0 group-hover/course:opacity-25 group-hover/course:scale-125 transition-opacity-transform duration-500 ease-in-out hidden dark:block"
+  >
+  <!-- <div class="absolute top-2 left-2 flex flex-col space-y-1">
+     @if(course().language.toLowerCase().includes('nl')) {
+     <img src="be.png" class="w-5 h-auto" alt="Belgian Flag">
+     }
 
-    @if(course().language.toLowerCase().includes('en')) {
-    <img src="en.png" class="w-5 h-auto" alt="English Flag">
-    }
-  </div>-->
+     @if(course().language.toLowerCase().includes('en')) {
+     <img src="en.png" class="w-5 h-auto" alt="English Flag">
+     }
+   </div>-->
   <!--@if(!isReused()) {
   <button mat-icon-button (click)="openDetails($event, course())" class="absolute top-2 right-2">
     <mat-icon class="detail-icon">info</mat-icon>
   </button>
   }-->
+
 </div>
