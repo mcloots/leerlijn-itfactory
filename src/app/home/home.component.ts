@@ -65,7 +65,7 @@ export class HomeComponent implements AfterViewInit {
     {
       name: 'Ethical Hacking', img: 'ethicalhacking.png', route: 'ccs',
       title: 'Ethical Hacking, word een echte IT ninja!',
-      description: `<p>Ben jij klaar om de digitale wereld te beschermen en een echte IT ninja te worden?  
+      description: `<p>Ben jij klaar om de digitale wereld te beschermen en een echte IT ninja te worden?
 In ons unieke traject Ethical Hacking duik je diep in de fascinerende wereld van “Offensive security”. Je leert zwakheden in IT systemen opsporen en geeft aanbevelingen hoe deze op te lossen.</p>
 <br>
 <p>Met een flinke dosis creativiteit en technische vaardigheden ontwikkel je de expertise om op een legitieme manier als pentester te opereren.  Je analyseert de risico's die je tegenkomt en maakt heldere rapportages waarmee organisaties direct aan de slag kunnen. Je zal dit in je opleiding ook toepassen bij echte bedrijven en organisaties.</p>
@@ -77,7 +77,7 @@ In ons unieke traject Ethical Hacking duik je diep in de fascinerende wereld van
     {
       name: 'Cloud Automation & Defence', img: 'cloudautomationdefence.png', route: 'ccs',
       title: 'Cloud Automation and Defence, word een echte IT wizard!',
-      description: `<p>Ben jij klaar om de digitale wereld te transformeren en een echte IT wizard te worden?  
+      description: `<p>Ben jij klaar om de digitale wereld te transformeren en een echte IT wizard te worden?
 In ons unieke traject "Cloud Automation and Defence" duik je in de fascinerende wereld van de cloud.</p>
       <br>
       <p>Je leert op een veilige, efficiënte en geautomatiseerde manier met cloudtechnologieën (zoals Amazon Web Services,  Microsoft Azure, Google Cloud Platform, ...) robuuste en schaalbare IT-oplossingen op te zetten die perfect aansluiten op de behoeften van bedrijven en hun applicaties. We werken hierbij volgens de “Infrastructure-As-Code" en “DevSecOps” principes.</p>

@@ -1,4 +1,14 @@
-<div class="min-h-screen bg-black flex flex-col items-center justify-center text-center transition-all duration-500">
+<div class="min-h-screen bg-primary dark:bg-secondary font-tmcandor dark:font-orbi flex flex-col items-center justify-center text-center transition-all duration-500">
+  <img
+    src="/assets/patterns/checkered-secondary.svg"
+    alt="TM Checkered Background"
+    class="absolute inset-0 w-full h-full object-cover scale-105 z-0 dark:hidden"
+  >
+  <img
+    src="/assets/patterns/glitch-dark.svg"
+    alt="TM Checkered Background"
+    class="absolute inset-0 w-full h-full object-cover scale-105 z-0 hidden dark:block"
+  >
     <!-- Back Button -->
     <button (click)="resetToInitialState()"
         class="absolute top-4 left-4 text-white bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-700 transition-colors"
@@ -8,7 +18,7 @@
 
     <!-- Mute/Unmute Button -->
     <button (click)="toggleMute()"
-        class="absolute top-4 right-4 text-white bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-700 transition-colors"
+        class="absolute top-4 right-auto left-auto text-white bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-700 transition-colors"
         aria-label="Mute or unmute audio">
         @if(isMuted) {
         <span>🔇</span>
@@ -24,12 +34,11 @@
     <audio #selectAudio [src]="'/select.mp3'"></audio>
 
     <!-- Container voor Titel en Knop -->
-    <div class="flex flex-col items-center space-y-8 transition-transform duration-500 font-orbi"
+    <div class="flex flex-col items-center space-y-8 transition-transform duration-500 relative"
         [ngClass]="{ 'translate-y-[-90%]': showGrid }">
         <!-- Titel -->
         @if(!selectedProfile) {
-        <h1 class="text-3xl md:text-5xl font-bold text-white tracking-widest">
-            {{titleText}}
+        <h1 class="text-3xl md:text-5xl font-bold text-white tracking-widest" [innerHTML]="titleText">
         </h1>
         }
 
@@ -45,17 +54,17 @@
 
     <!-- Grid Layout -->
     @if(showGrid && !selectedProfile) {
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-16 p-4 w-full max-w-6xl font-orbi">
+    <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-16 p-4 w-full max-w-6xl">
         <!-- Loop through profiles -->
         @for (profile of profiles; track $index) {
         <div class="p-6 rounded-lg shadow-lg cursor-pointer transition-all duration-500"
             (click)="selectProfile(profile)" [ngClass]="{
-                'bg-gray-800 text-white flex flex-col items-center justify-center text-center font-bold text-lg hover:bg-orange-600': !selectedProfile || selectedProfile === profile,
+                'cursor-pointer bg-tertiary text-secondary dark:bg-secondary dark:text-tertiary dark:border dark:border-gray-700 shadow hover:scale-105 transition-transform duration-500 flex flex-col items-center justify-center text-center font-bold text-lg': !selectedProfile || selectedProfile === profile,
                 'hidden': selectedProfile && selectedProfile !== profile
               }">
             @if(!selectedProfile || selectedProfile === profile) {
             <img [src]="'/profiles/' + profile.img" alt="{{ profile.name }} image"
-                class="w-24 h-24 rounded-sm mb-4 object-cover" />
+                class="w-24 h-24 rounded-sm mb-4 object-contain" />
 
             <div>{{ profile.name }}</div>
             }
@@ -67,17 +76,17 @@
     <!-- Selected Profile Details -->
     @if(selectedProfile) {
     <div
-        class="flex flex-col items-center justify-center text-center font-orbi bg-gray-900 text-white p-6 rounded-lg shadow-lg transition-all duration-500 max-w-4xl w-full space-y-6">
+        class="relative flex flex-col items-center justify-center text-center bg-tertiary text-secondary dark:bg-secondary dark:text-tertiary dark:border dark:border-gray-700 py-6 px-12 rounded-lg shadow-lg transition-all duration-500 max-w-4xl w-full space-y-6">
         <!-- Selected Profile Image -->
         <div class="flex-shrink-0 flex flex-col items-center mb-4">
             <img [src]="'/profiles/' + selectedProfile.img" alt="{{ selectedProfile.name }} image"
-                class="w-32 h-32 rounded-full object-cover mb-4" />
+                class="w-32 h-32 object-contain" />
         </div>
 
         <!-- Title and Description -->
         <div>
             <h2 class="text-2xl font-bold mb-4">{{ selectedProfile.title }}</h2>
-            <p class="text-gray-300 mb-6 text-justify" [innerHTML]="selectedProfile.description"></p>
+            <p class="text-text dark:text-tertiary mb-6 text-justify" [innerHTML]="selectedProfile.description"></p>
         </div>
 
         <!-- Buttons -->
