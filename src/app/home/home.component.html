@@ -1,4 +1,5 @@
-<div class="min-h-screen bg-primary dark:bg-secondary font-tmcandor dark:font-orbi flex flex-col items-center justify-center text-center transition-all duration-500">
+<div
+  class="min-h-screen bg-primary dark:bg-secondary font-tmcandor dark:font-orbi flex flex-col items-center justify-center text-center transition-all duration-500 overflow-hidden relative">
   <img
     src="/assets/patterns/checkered-secondary.svg"
     alt="TM Checkered Background"
@@ -9,100 +10,108 @@
     alt="TM Checkered Background"
     class="absolute inset-0 w-full h-full object-cover scale-105 z-0 hidden dark:block"
   >
-    <!-- Back Button -->
-    <button (click)="resetToInitialState()"
-        class="absolute top-4 left-4 text-white bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-700 transition-colors"
-        aria-label="Back to start screen">
-        🔙
-    </button>
+  <!-- Back Button -->
+  <button (click)="resetToInitialState()"
+          class="absolute top-4 left-4 text-white bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-700 transition-colors"
+          aria-label="Back to start screen">
+    🔙
+  </button>
 
-    <!-- Mute/Unmute Button -->
-    <button (click)="toggleMute()"
-        class="absolute top-4 right-auto left-auto text-white bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-700 transition-colors"
-        aria-label="Mute or unmute audio">
-        @if(isMuted) {
-        <span>🔇</span>
-        } @else {
-        <span>🔊</span>
-        }
-    </button>
+  <!-- Mute/Unmute Button -->
+  <button (click)="toggleMute()"
+          class="absolute top-4 right-auto left-auto text-white bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-700 transition-colors"
+          aria-label="Mute or unmute audio">
+    @if (isMuted) {
+      <span>🔇</span>
+    } @else {
+      <span>🔊</span>
+    }
+  </button>
 
-    <!-- Audio Element -->
-    <audio #backgroundAudio [src]="'/background.mp4'" loop [muted]="isMuted"></audio>
+  <!-- Audio Element -->
+  <audio #backgroundAudio [src]="'/background.mp4'" loop [muted]="isMuted"></audio>
 
-    <!-- Select Button Sound -->
-    <audio #selectAudio [src]="'/select.mp3'"></audio>
+  <!-- Select Button Sound -->
+  <audio #selectAudio [src]="'/select.mp3'"></audio>
 
-    <!-- Container voor Titel en Knop -->
-    <div class="flex flex-col items-center space-y-8 transition-transform duration-500 relative"
-        [ngClass]="{ 'translate-y-[-90%]': showGrid }">
-        <!-- Titel -->
-        @if(!selectedProfile) {
-        <h1 class="text-3xl md:text-5xl font-bold text-white tracking-widest" [innerHTML]="titleText">
-        </h1>
-        }
+  <!-- Container voor Titel en Knop -->
+  <div class="flex flex-col items-center space-y-8 mt-20 transition-transform duration-500 relative"
+       [ngClass]="{ 'translate-y-[-10%]': showGrid }">
+    <!-- Titel -->
+    @if (!selectedProfile) {
+      <h1 class="text-3xl md:text-6xl font-bold text-white tracking-widest" [innerHTML]="titleText"></h1>
+      <p class="text-xl md:text-3xl text-tertiary" [innerHTML]="descriptionText"></p>
+    }
 
-        <!-- Startknop -->
-        @if(!showGrid) {
-        <button
-            class="bg-gradient-to-b from-orange-400 to-orange-800 text-white text-xl md:text-2xl font-bold px-8 py-4 rounded-lg shadow-[0_4px_0_#000] border-4 border-black hover:brightness-110 active:translate-y-1 active:shadow-none transition-transform duration-500"
-            (click)="onStart()">
-            Start
-        </button>
-        }
-    </div>
+    <!-- Startknop -->
+    @if (!showGrid) {
+      <button
+        class="bg-gradient-to-b from-orange-400 to-orange-800 text-white text-xl md:text-2xl font-bold px-16 py-4 rounded-lg shadow-[0_4px_0_#000] border-4 border-black hover:brightness-110 hover:scale-105 active:translate-y-1 active:shadow-none transition-all duration-500"
+        (click)="onStart()">
+        Start
+      </button>
+    }
+  </div>
 
-    <!-- Grid Layout -->
-    @if(showGrid && !selectedProfile) {
-    <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-16 p-4 w-full max-w-6xl">
-        <!-- Loop through profiles -->
-        @for (profile of profiles; track $index) {
+  <!-- Grid Layout -->
+  @if (showGrid && !selectedProfile) {
+    <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-16 p-4 w-full max-w-6xl"
+         [ngClass]="{ 'translate-y-[-10%]': showGrid }">
+      <!-- Loop through profiles -->
+      @for (profile of profiles;track $index) {
         <div class="p-6 rounded-lg shadow-lg cursor-pointer transition-all duration-500"
-            (click)="selectProfile(profile)" [ngClass]="{
+             (click)="selectProfile(profile)" [ngClass]="{
                 'cursor-pointer bg-tertiary text-secondary dark:bg-secondary dark:text-tertiary dark:border dark:border-gray-700 shadow hover:scale-105 transition-transform duration-500 flex flex-col items-center justify-center text-center font-bold text-lg': !selectedProfile || selectedProfile === profile,
                 'hidden': selectedProfile && selectedProfile !== profile
               }">
-            @if(!selectedProfile || selectedProfile === profile) {
+          @if (!selectedProfile || selectedProfile === profile) {
             <img [src]="'/profiles/' + profile.img" alt="{{ profile.name }} image"
-                class="w-24 h-24 rounded-sm mb-4 object-contain" />
+                 class="w-24 h-24 rounded-sm mb-4 object-contain"/>
 
             <div>{{ profile.name }}</div>
-            }
+          }
         </div>
-        }
+      }
     </div>
-    }
+  }
 
-    <!-- Selected Profile Details -->
-    @if(selectedProfile) {
+  <!-- Selected Profile Details -->
+  @if (selectedProfile) {
     <div
-        class="relative flex flex-col items-center justify-center text-center bg-tertiary text-secondary dark:bg-secondary dark:text-tertiary dark:border dark:border-gray-700 py-6 px-12 rounded-lg shadow-lg transition-all duration-500 max-w-4xl w-full space-y-6">
-        <!-- Selected Profile Image -->
-        <div class="flex-shrink-0 flex flex-col items-center mb-4">
-            <img [src]="'/profiles/' + selectedProfile.img" alt="{{ selectedProfile.name }} image"
-                class="w-32 h-32 object-contain" />
-        </div>
+      class="relative flex flex-col items-center justify-center text-center bg-tertiary text-secondary dark:bg-secondary dark:text-tertiary dark:border dark:border-gray-700 py-10 px-12 rounded-lg shadow-lg transition-all duration-500 max-w-4xl w-full space-y-6 max-h-[75vh]">
+      <!-- Selected Profile Image -->
+      <div class="absolute top-[-4rem] left-0 right-0 flex justify-center">
+        <img [src]="'/profiles/' + selectedProfile.img" alt="{{ selectedProfile.name }} image"
+             class="w-32 h-32 object-contain"/>
+      </div>
 
-        <!-- Title and Description -->
-        <div>
-            <h2 class="text-2xl font-bold mb-4">{{ selectedProfile.title }}</h2>
-            <p class="text-text dark:text-tertiary mb-6 text-justify" [innerHTML]="selectedProfile.description"></p>
-        </div>
+      <!-- Title and Description -->
 
-        <!-- Buttons -->
-        <div class="flex space-x-4">
-            <!-- Go Back Button -->
-            <button (click)="resetToGridState()"
-                class="bg-gray-800 text-white px-6 py-2 rounded-lg shadow-lg hover:bg-gray-700 transition-transform duration-300">
-                🔙 Go Back
-            </button>
-
-            <!-- Navigate Button -->
-            <button [routerLink]="selectedProfile.route"
-                class="bg-gradient-to-b from-orange-400 to-orange-800 text-white px-6 py-2 rounded-lg shadow-lg hover:brightness-110 transition-transform duration-300">
-                🚀 Explore
-            </button>
+      <h2 class="text-2xl font-bold mb-4">{{ selectedProfile.title }}</h2>
+      <div class="max-h-[100%] overflow-y-auto relative border-2 p-4 rounded border-bgMuted dark:border-secondaryDark"
+           #profileContent>
+        <p class="text-lg text-text dark:text-tertiary mb-6 text-justify" [innerHTML]="selectedProfile.description"></p>
+        <!--@if(showScrollIndicator) {
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-xl text-gray-500 dark:text-gray-400">
+          <span class="animate-bounce">&#8595;</span>
         </div>
+        }-->
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex space-x-4">
+        <!-- Go Back Button -->
+        <button (click)="resetToGridState()"
+                class="text-lg bg-secondary dark:bg-secondaryDark dark:border dark:border-gray-700 text-white px-6 py-2 rounded shadow-lg hover:bg-secondaryDarkest hover:scale-105 transition-transform-colors duration-300">
+          🔙 Go Back
+        </button>
+
+        <!-- Navigate Button -->
+        <button [routerLink]="selectedProfile.route"
+                class="text-lg bg-gradient-to-b from-orange-400 to-orange-800 text-white dark:border dark:border-gray-700 px-12 py-2 rounded shadow-lg hover:brightness-110 hover:scale-105 transition-transform-colors duration-300">
+          🔍 Explore
+        </button>
+      </div>
     </div>
-    }
+  }
 </div>

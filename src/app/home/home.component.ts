@@ -12,20 +12,32 @@ export class HomeComponent implements AfterViewInit {
 
   showGrid = false; // Controleert of de grid zichtbaar is
   isMuted = true; // Controls the audio mute state
-  titleText = 'Press Start to Continue… Your IT adventure awaits!'
+  titleText = 'Your IT adventure awaits! 🚀'
+  descriptionText = 'Press start to continue...'
   selectedProfile: any = null; // The currently selected profile
+  showScrollIndicator = false; // Scroll indicator boolean
 
   @ViewChild('backgroundAudio') backgroundAudio!: ElementRef<HTMLAudioElement>;
   @ViewChild('selectAudio') selectAudio!: ElementRef<HTMLAudioElement>;
+  @ViewChild('profileContent') profileContent!: ElementRef;
 
   ngAfterViewInit(): void {
     this.backgroundAudio.nativeElement.play();
   }
 
+  checkIfOverflow() {
+    const element = this.profileContent.nativeElement;
+    // Check if the content is overflowing
+    if (element.scrollHeight > element.clientHeight) {
+      this.showScrollIndicator = true;
+    }
+  }
+
   onStart() {
     this.selectAudio.nativeElement.play(); // Play the select sound once
     this.showGrid = true; // Toont de grid en activeert de transitie
-    this.titleText = 'Choose your destiny!'
+    this.titleText = 'Choose your destiny! 🔮'
+    this.descriptionText = 'Select a profile to explore...'
   }
 
   toggleMute() {
@@ -39,7 +51,8 @@ export class HomeComponent implements AfterViewInit {
   resetToInitialState() {
     this.selectAudio.nativeElement.play(); // Play the select sound once
     this.showGrid = false; // Hide the grid
-    this.titleText = 'Press Start to Continue… Your IT adventure awaits!';
+    this.titleText = 'Your IT adventure awaits! 🚀';
+    this.descriptionText = 'Press start to continue...'
     this.selectedProfile = null; // Reset the selected profile
   }
 
@@ -52,6 +65,7 @@ export class HomeComponent implements AfterViewInit {
   selectProfile(profile: any) {
     this.selectAudio.nativeElement.play(); // Play the select sound once
     this.selectedProfile = profile; // Set the selected profile
+    this.checkIfOverflow();
   }
 
   profiles = [
